@@ -6,6 +6,8 @@
 
 <p align="center"><strong>Scramble your ad profile.</strong> Decoy browsing, hosts-file blocking, private DNS picks and ad ID reset guides, in a retro 8-bit static site.</p>
 
+<p align="center"><a href="https://codeposse.github.io/AdPoison/"><strong>Live site: codeposse.github.io/AdPoison</strong></a></p>
+
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-ffd23f?style=flat-square">
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-2ec4b6?style=flat-square">
@@ -68,6 +70,7 @@ Pressing **Start** (a real click, so popup blockers allow it) opens one extra wi
 │   └── set-domain.mjs       # Swaps the placeholder domain everywhere
 ├── index.js                 # Zero-dependency dev server (applies _headers)
 ├── _headers                 # Security headers for Netlify / Cloudflare Pages
+├── .nojekyll                # Tells GitHub Pages to skip Jekyll
 ├── robots.txt · sitemap.xml · site.webmanifest · humans.txt · .well-known/security.txt
 ├── package.json · package-lock.json
 └── README.md
@@ -86,16 +89,30 @@ No `npm install` needed: there are no dependencies.
 
 ## Deploy
 
-1. **Set your domain** (the code ships with the placeholder `https://adpoison.example`):
-   ```bash
-   npm run set-domain -- https://your-domain.com
-   ```
-   This updates canonical URLs, Open Graph and Twitter tags, JSON-LD, `sitemap.xml`, `robots.txt`, `humans.txt` and `security.txt`. It's safe to re-run.
-2. Edit the `Contact:` line in `.well-known/security.txt`.
-3. Upload the folder to any static host:
-   - **Netlify / Cloudflare Pages**: publish directory is the repo root, with no build command. `_headers` and `404.html` are picked up automatically.
-   - **GitHub Pages**: publish from the root of `main`. GitHub Pages ignores `_headers`, so security headers won't apply there.
-   - **Apache / Nginx**: serve the folder and copy the headers from `_headers` into your config.
+### GitHub Pages (current setup)
+
+The site is configured for **https://codeposse.github.io/AdPoison/**.
+
+1. GitHub Pages paths follow the repository name and are case-sensitive. The repo is currently `CodePosse/AdPoison`, which would publish at `/AdPoison/`. To get the lowercase URL, rename the repo to `adpoison` (**Settings → General → Repository name**). GitHub redirects the old remote URL.
+2. **Settings → Pages → Build and deployment**: set Source to *Deploy from a branch*, branch `main`, folder `/ (root)`.
+3. Push. The site is live in a minute or two.
+
+Notes for GitHub Pages:
+- `.nojekyll` turns off Jekyll, so `.well-known/` and `_headers` get published.
+- GitHub Pages ignores `_headers`, so every page also carries a `<meta http-equiv="Content-Security-Policy">`. Clickjacking protection (`frame-ancestors`) can't be set from a meta tag, so it only applies on hosts that honor `_headers`.
+- Crawlers only read `robots.txt` and `security.txt` at the host root (`codeposse.github.io/`), not under `/AdPoison/`. Submit `https://codeposse.github.io/AdPoison/sitemap.xml` in Google Search Console instead.
+- `404.html` uses absolute URLs, so it's styled correctly at any missing path under the project.
+
+### Moving to another domain later
+
+```bash
+npm run set-domain -- https://your-domain.com
+```
+
+This rewrites canonical URLs, Open Graph and Twitter tags, JSON-LD, the 404 page, `sitemap.xml`, `robots.txt`, `humans.txt` and `security.txt`. The current domain is recorded in `.domain`, so it's safe to re-run.
+
+- **Netlify / Cloudflare Pages**: publish the repo root with no build command. `_headers` and `404.html` are picked up automatically.
+- **Apache / Nginx**: serve the folder and copy the headers from `_headers` into your config.
 
 ## SEO and accessibility checklist
 

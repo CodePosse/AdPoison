@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Disallow: /scripts/
 
-Sitemap: https://adpoison.example/sitemap.xml
+Sitemap: https://codeposse.github.io/AdPoison/sitemap.xml

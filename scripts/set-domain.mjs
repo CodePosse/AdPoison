@@ -2,7 +2,7 @@
  * Swap the placeholder domain for your real one across every page,
  * the sitemap, robots.txt, humans.txt, security.txt and structured data.
  *
- *   npm run set-domain -- https://adpoison.yourdomain.com
+ *   npm run set-domain -- https://AdPoison.yourdomain.com
  *
  * Safe to re-run: it replaces whatever domain is currently recorded
  * in .domain (defaults to the shipped placeholder).
@@ -12,7 +12,7 @@ import { join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const PLACEHOLDER = 'https://adpoison.example';
+const PLACEHOLDER = 'https://AdPoison.example';
 const STATE = join(ROOT, '.domain');
 
 const next = (process.argv[2] || '').replace(/\/+$/, '');

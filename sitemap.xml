@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://adpoison.example/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://adpoison.example/html/hosts.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://adpoison.example/html/dns.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://adpoison.example/html/reset.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://adpoison.example/html/hygiene.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://adpoison.example/html/privacy.html</loc><lastmod>2026-10-04</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/html/hosts.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/html/dns.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/html/reset.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/html/hygiene.html</loc><lastmod>2026-10-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://codeposse.github.io/AdPoison/html/privacy.html</loc><lastmod>2026-10-04</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

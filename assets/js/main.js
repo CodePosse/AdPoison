@@ -7,6 +7,34 @@
 
   var AP = window.AP;
 
+  /* ---------- Console easter egg (same skull as humans.txt) ---------- */
+  var SKULL = String.raw`
+               _.---------------------._
+          _.-'    *      \ | /      *    '-._
+       .'   .           --(@)--           .   '.
+     .'   \|/            / | \            \|/   '.
+    /   --@--   .          .          .   --@--   \
+   ;     /|\      *                 *      /|\     ;
+   |       .-""""-.                 .-""""-.       |
+   |  .   / .-''-. \               / .-''-. \   .  |
+   | -*-  | ( @@ ) |               | ( @@ ) |  -*- |
+   |  '   \ '-..-' /      / \      \ '-..-' /   '  |
+   ;       '-....-'      (_^_)      '-....-'       ;
+    \   .~@~.     *                 *     .~@~.   /
+      \     ._.-._.-._.-._.-._.-._.-._.-._.     /
+       \    |_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|    /
+        '.   '-'-'-'-'-'-'-'-'-'-'-'-'-'-'   .'
+          '-._____________________________.-'
+`;
+  if (window.console && console.log) {
+    console.log('%c' + SKULL, 'color:#ffd23f;font-family:monospace;font-size:12px;line-height:1.15');
+    console.log(
+      '%cA D   P O I S O N%c\nfeed the trackers garbage ~ dia de los datos\nNo trackers here. Read every line: https://github.com/CodePosse/AdPoison',
+      'color:#ff5c9d;font-family:monospace;font-size:16px;font-weight:bold',
+      'color:#2ec4b6;font-family:monospace;font-size:12px'
+    );
+  }
+
   /* ---------- Mobile nav ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');

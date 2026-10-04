@@ -1,0 +1,6 @@
+# Ad Poison: everyone welcome, including the bots we're poisoning.
+User-agent: *
+Allow: /
+Disallow: /scripts/
+
+Sitemap: https://adpoison.example/sitemap.xml

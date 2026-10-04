@@ -1,0 +1,5 @@
+# Replace the contact below before deploying.
+Contact: https://github.com/
+Expires: 2027-10-04T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://adpoison.example/.well-known/security.txt

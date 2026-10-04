@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ad Poison: Scramble Your Ad Profile with Noise, Blocking &amp; Resets</title>
+  <meta name="description" content="Free, private toolkit to poison personalized ad profiles: a browser chaff generator, copy-paste hosts file blocks, private DNS picks, and ad ID reset guides.">
+  <meta name="theme-color" content="#16091f">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://adpoison.example/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ad Poison">
+  <meta property="og:title" content="Ad Poison: Scramble Your Ad Profile">
+  <meta property="og:description" content="Feed the trackers garbage. Generate decoy browsing, block ad domains, and reset your advertising IDs. No sign-up, no tracking.">
+  <meta property="og:url" content="https://adpoison.example/">
+  <meta property="og:image" content="https://adpoison.example/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A pixel-art sugar skull with wings next to the words Ad Poison: scramble your ad profile.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ad Poison: Scramble Your Ad Profile">
+  <meta name="twitter:description" content="Feed the trackers garbage. Decoy browsing, hosts blocks, private DNS and ad ID resets.">
+  <meta name="twitter:image" content="https://adpoison.example/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="A pixel-art sugar skull with wings next to the words Ad Poison.">
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="assets/img/skull.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://adpoison.example/#website",
+        "url": "https://adpoison.example/",
+        "name": "Ad Poison",
+        "description": "Free, private toolkit to poison personalized ad profiles.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://adpoison.example/#app",
+        "name": "Ad Poison Chaff Generator",
+        "url": "https://adpoison.example/#generator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any modern web browser",
+        "browserRequirements": "Requires JavaScript and permission to open one popup window.",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Decoy search traffic across Google, Bing, YouTube, Amazon and more",
+          "Coherent fake personas or pure chaos mode",
+          "Jittered timing and session limits",
+          "Runs entirely in your browser with no data collection"
+        ],
+        "image": "https://adpoison.example/assets/img/og-image.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://adpoison.example/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does generating fake browsing traffic actually work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Partly. Ad systems are good at spotting pure randomness, so Ad Poison uses coherent personas that look like real interests. Noise works best combined with blocking trackers and turning off ad personalization, which is why the site covers all three." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Ad Poison safe and private?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ad Poison is a static site with no analytics, no cookies and no server-side code. Your settings are saved only in your own browser's local storage. The generator only opens public search and shopping pages." }
+          },
+          {
+            "@type": "Question",
+            "name": "Will Google show me a CAPTCHA?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It can if searches come too fast. Ad Poison adds random jitter of plus or minus 40 percent to every interval. Keep the pace at 20 seconds or slower and mix destinations to stay under the radar." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why not a browser extension like Chaff?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Extensions that generate background traffic have been removed from or disabled in the Chrome Web Store. A web page works in any browser without installing anything, and you can see exactly what it does." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it legal to poison my ad profile?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Visiting public web pages and opting out of ad personalization from your own device is generally lawful. Ad Poison does not click ads, commit click fraud, or touch anyone else's accounts. Check your local laws and each site's terms if you are unsure." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/img/skull.svg" alt="" width="36" height="36"><span>AD POISON</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#generator">Generator</a></li>
+          <li><a href="html/hosts.html">Hosts file</a></li>
+          <li><a href="html/dns.html">Private DNS</a></li>
+          <li><a href="html/reset.html">Reset ad IDs</a></li>
+          <li><a href="html/hygiene.html">Hygiene</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__sky" aria-hidden="true"></div>
+      <div class="hero__pipes" aria-hidden="true">
+        <span class="pipe pipe--bottom"></span>
+        <span class="pipe pipe--top"></span>
+        <span class="pipe pipe--bottom pipe--b2"></span>
+      </div>
+      <div class="hero__ads" aria-hidden="true">
+        <span class="ad-chip">AD</span>
+        <span class="ad-chip">AD</span>
+        <span class="ad-chip">AD</span>
+      </div>
+      <div class="hero__ground" aria-hidden="true"></div>
+
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow">Free &middot; No sign-up &middot; No tracking</span>
+          <h1 id="hero-title">Feed the trackers garbage.</h1>
+          <p class="lede">Ad networks build a profile of you from every click. Ad Poison scrambles it with decoy browsing, blocks the worst offenders, and walks you through wiping the slate clean.</p>
+          <div class="btn-row">
+            <a class="btn" href="#generator">Start poisoning</a>
+            <a class="btn btn--teal no-ext" href="https://myadcenter.google.com/personalizationoff?n=true">Turn off Google ad personalization</a>
+          </div>
+          <p class="hero__note">Opens Google My Ad Center. You'll need to be signed in.</p>
+        </div>
+        <div class="hero__stage">
+          <div>
+            <button class="mascot" type="button" aria-label="Flap the sugar skull mascot">
+              <img src="assets/img/skull-flap.svg" alt="" width="288" height="160">
+            </button>
+            <p class="mascot-tip" aria-live="polite">Tap the skull to flap</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">How it works</span>
+          <h2 id="how-title">Three moves to break your ad profile</h2>
+          <p>No single trick beats modern ad tech. Stack all three and you go from a crisp target to a blurry mess.</p>
+        </div>
+        <div class="grid">
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">01</div>
+            <h3>Noise</h3>
+            <p>Run the chaff generator. It searches and browses as a fake persona in a separate window, so your real interests get buried under a retired beekeeper's honey extractor research.</p>
+            <a class="btn btn--sm" href="#generator">Open generator</a>
+          </article>
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">02</div>
+            <h3>Block</h3>
+            <p>Stop trackers from loading at all. Copy-paste a hosts file block for your computer, or switch your phone and router to a filtering private DNS.</p>
+            <div class="btn-row" style="margin-top:auto">
+              <a class="btn btn--sm btn--pink" href="html/hosts.html">Hosts file</a>
+              <a class="btn btn--sm btn--ghost" href="html/dns.html">Private DNS</a>
+            </div>
+          </article>
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">03</div>
+            <h3>Reset</h3>
+            <p>Delete your mobile advertising IDs, switch off personalization at Google, Meta, Amazon and Microsoft, and set a weekly browser hygiene routine.</p>
+            <div class="btn-row" style="margin-top:auto">
+              <a class="btn btn--sm btn--teal" href="html/reset.html">Reset ad IDs</a>
+              <a class="btn btn--sm btn--ghost" href="html/hygiene.html">Hygiene</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GENERATOR ============ -->
+    <section class="section section--alt" id="generator" aria-labelledby="gen-title">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">Step 01 &middot; Noise</span>
+          <h2 id="gen-title">Chaff generator</h2>
+          <p>Inspired by the original <a href="https://www.deploychaff.com/">Chaff</a> project. Press Start and one extra window opens. Ad Poison steers it to decoy searches at random intervals. Minimize it and get on with your day.</p>
+        </div>
+
+        <div class="console" id="chaff">
+          <div class="console__controls pixel-box">
+            <form id="chaff-form">
+              <fieldset>
+                <legend>1. Pick a mode</legend>
+                <label class="check"><input type="radio" name="mode" value="persona" checked><span>Persona <small>Act consistently like someone you're not. Harder for ad systems to filter out.</small></span></label>
+                <label class="check"><input type="radio" name="mode" value="chaos"><span>Chaos <small>A different random interest every hop.</small></span></label>
+              </fieldset>
+
+              <div class="field mt-1">
+                <label for="chaff-persona">Persona</label>
+                <div class="btn-row" style="flex-wrap:nowrap;gap:.75rem">
+                  <select id="chaff-persona">
+                    <option value="random">Surprise me</option>
+                  </select>
+                  <button type="button" class="btn btn--sm btn--ghost" id="chaff-shuffle">Shuffle</button>
+                </div>
+              </div>
+
+              <fieldset class="mt-2">
+                <legend>2. Where to send noise</legend>
+                <p class="field__hint" style="margin-bottom:.6rem"><strong>Full visit</strong> sites load in the chaff window like normal browsing. Google and YouTube block remote-controlled windows, so they get a <strong>background ping</strong>: a hidden request that carries the cookies your browser allows for third-party requests.</p>
+                <div class="console__checks">
+                  <label class="check"><input type="checkbox" name="dest" value="google" checked><span>Google Search <small>Background ping</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="youtube" checked><span>YouTube <small>Background ping</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="bing" checked><span>Bing <small>Full visit</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="amazon" checked><span>Amazon <small>Full visit</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="etsy"><span>Etsy <small>Full visit</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="news"><span>Google News <small>Background ping</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="wikipedia"><span>Wikipedia <small>Random article, full visit</small></span></label>
+                  <label class="check"><input type="checkbox" name="dest" value="duck"><span>DuckDuckGo <small>Doesn't profile you, adds cover only</small></span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="mt-2">
+                <legend>3. Set the pace</legend>
+                <div class="field">
+                  <label for="chaff-pace">Seconds between hops: <output id="chaff-pace-out" for="chaff-pace">~30s</output></label>
+                  <input type="range" id="chaff-pace" min="10" max="120" step="5" value="30" aria-describedby="pace-hint">
+                  <p class="field__hint" id="pace-hint">Each wait is randomized &plusmn;40%. Under 20s may trigger CAPTCHAs.</p>
+                </div>
+                <div class="field mt-1">
+                  <label for="chaff-duration">Stop after</label>
+                  <select id="chaff-duration">
+                    <option value="15">15 minutes</option>
+                    <option value="30" selected>30 minutes</option>
+                    <option value="60">1 hour</option>
+                    <option value="180">3 hours</option>
+                    <option value="0">When I press Stop</option>
+                  </select>
+                </div>
+              </fieldset>
+            </form>
+
+            <div class="btn-row">
+              <button type="button" class="btn" id="chaff-start">&#9654; Start</button>
+              <button type="button" class="btn btn--danger" id="chaff-stop" disabled>&#9632; Stop</button>
+              <button type="button" class="btn btn--ghost btn--sm" id="chaff-preview">Preview queries</button>
+            </div>
+          </div>
+
+          <div class="screen" aria-labelledby="screen-title">
+            <h3 id="screen-title" class="sr-only">Generator status</h3>
+            <dl class="hud">
+              <div class="hud__stat"><dt>Hops</dt><dd id="stat-hops">0</dd></div>
+              <div class="hud__stat"><dt>Elapsed</dt><dd id="stat-time">0:00</dd></div>
+              <div class="hud__stat"><dt>Next</dt><dd id="stat-next">-</dd></div>
+            </dl>
+            <p class="status-line" id="chaff-status" role="status" aria-live="polite">Loading&hellip;</p>
+            <p class="persona-card" id="chaff-persona-card"></p>
+            <ol class="log" id="chaff-log" aria-label="Activity log"></ol>
+            <p class="muted" style="font-size:1.05rem"><span class="blink" aria-hidden="true">&#9608;</span> Tip: allow popups for this site. Keep this tab open; the chaff window can be minimized.</p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="callout callout--warn mt-2"><strong>JavaScript is off.</strong> The generator needs JavaScript. Everything else on this site (hosts file, DNS, resets) works without it.</p>
+        </noscript>
+
+        <div class="callout mt-2">
+          <p><strong>Honest expectations:</strong> noise alone won't make you invisible. Big platforms also profile you from purchases, location and logged-in apps. Use the generator <em>with</em> blocking and resets. For the strongest effect, run it in the browser profile where you're signed in to Google, YouTube or Amazon, since that's where your ad profile lives. Background pings to Google and YouTube only reach your profile if your browser allows third-party cookies; if you've blocked them (good for privacy), lean on the full-visit sites and the <a href="html/reset.html">opt-outs</a> instead.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK HITS ============ -->
+    <section class="section" aria-labelledby="quick-title">
+      <div class="wrap grid grid--2">
+        <div>
+          <span class="eyebrow">60-second wins</span>
+          <h2 id="quick-title">Hard links: opt out right now</h2>
+          <p class="muted">Each link drops you straight onto the right settings page. Sign in when asked.</p>
+        </div>
+        <ul class="linklist">
+          <li><a href="https://myadcenter.google.com/personalizationoff?n=true"><span>Google: personalized ads OFF</span><span>My Ad Center</span></a></li>
+          <li><a href="https://myactivity.google.com/activitycontrols"><span>Google: pause Web &amp; App Activity</span><span>Activity controls</span></a></li>
+          <li><a href="https://accountscenter.facebook.com/ad_preferences"><span>Meta: ad preferences</span><span>Facebook &amp; Instagram</span></a></li>
+          <li><a href="https://www.amazon.com/adprefs"><span>Amazon: interest-based ads</span><span>Advertising prefs</span></a></li>
+          <li><a href="https://account.microsoft.com/privacy/ad-settings"><span>Microsoft: personalized ads</span><span>Ad settings</span></a></li>
+          <li><a href="https://optout.aboutads.info/"><span>Industry-wide opt-out (US)</span><span>DAA WebChoices</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Questions from the crypt</h2>
+        </div>
+        <div class="prose" style="max-width:none">
+          <details class="acc">
+            <summary>Does generating fake browsing traffic actually work?</summary>
+            <div class="acc__body">
+              <p>Partly. Ad systems are good at spotting pure randomness, so Ad Poison defaults to <strong>persona mode</strong>: coherent, plausible interests that look like a real person. Researchers have long shown that obfuscation tools such as <a href="https://trackmenot.io/">TrackMeNot</a> and <a href="https://adnauseam.io/">AdNauseam</a> degrade profile quality. Noise works best when combined with blocking trackers and switching personalization off, which is why this site covers all three.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Is Ad Poison safe and private?</summary>
+            <div class="acc__body">
+              <p>It's a static website: no analytics, no cookies, no server, and even the fonts are self-hosted. Your generator settings and checklists are saved only in your browser's local storage. Read the <a href="html/privacy.html">privacy notice</a>.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Will Google show me a CAPTCHA?</summary>
+            <div class="acc__body">
+              <p>It can if searches come too fast. Every interval gets &plusmn;40% random jitter. Keep the pace at 20 seconds or slower and mix in several destinations. If a CAPTCHA appears in the chaff window, just stop, wait a bit, and try a slower pace.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Why not a browser extension like Chaff?</summary>
+            <div class="acc__body">
+              <p>The original <a href="https://github.com/immutabledev/chaff">Chaff extension</a> no longer works in Chrome, and traffic-generating extensions keep getting pulled from stores. A plain web page works in any browser, needs no install, and you can read every line of its source.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>Is it legal to poison my ad profile?</summary>
+            <div class="acc__body">
+              <p>Visiting public pages and opting out of personalization from your own device is generally lawful. Ad Poison never clicks ads (no click fraud) and never touches anyone else's accounts. If you're unsure, check your local laws and each site's terms of service.</p>
+            </div>
+          </details>
+          <details class="acc">
+            <summary>How unique is my browser anyway?</summary>
+            <div class="acc__body">
+              <p>Test your fingerprint at <a href="https://amiunique.org/">AmIUnique</a> or the EFF's <a href="https://coveryourtracks.eff.org/">Cover Your Tracks</a>. Fingerprinting works even without cookies, so pair these results with the <a href="html/hygiene.html">browser hygiene guide</a>.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHARE ============ -->
+    <section class="section" aria-labelledby="share-title">
+      <div class="wrap">
+        <div class="pixel-box share-panel">
+          <div>
+            <h2 id="share-title">Poison is better shared</h2>
+            <p>The more people feeding ad systems noise, the less a single profile is worth. Send Ad Poison to a friend.</p>
+          </div>
+          <button class="btn btn--pink" type="button" data-share data-share-text="I'm scrambling my ad profile with Ad Poison. Free, no sign-up:">Share Ad Poison</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="footer-brand"><img src="assets/img/skull.svg" alt="" width="44" height="44"><strong>AD POISON</strong></div>
+        <p class="mt-1">Scramble your ad profile. No tracking on this site, ever.</p>
+      </div>
+      <nav aria-label="Tools">
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="#generator">Chaff generator</a></li>
+          <li><a href="html/hosts.html">Hosts file builder</a></li>
+          <li><a href="html/dns.html">Private DNS picks</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="html/reset.html">Reset ad IDs</a></li>
+          <li><a href="html/hygiene.html">Browser hygiene</a></li>
+          <li><a href="html/privacy.html">Privacy notice</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; <span data-year>2026</span> Ad Poison. Released under the MIT License. Not affiliated with any company mentioned. Information only, not legal advice.</p>
+    </div>
+  </footer>
+
+  <script src="assets/utils/helpers.js" defer></script>
+  <script src="assets/utils/wordbank.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/chaff.js" defer></script>
+</body>
+</html>

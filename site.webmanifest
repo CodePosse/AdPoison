@@ -1,0 +1,16 @@
+{
+  "name": "Ad Poison",
+  "short_name": "Ad Poison",
+  "description": "Scramble your ad profile with decoy browsing, blocking and resets.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#16091f",
+  "theme_color": "#16091f",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/img/skull.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

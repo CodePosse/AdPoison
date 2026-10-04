@@ -1,0 +1,27 @@
+{
+  "name": "adpoison",
+  "version": "1.0.0",
+  "description": "Scramble your ad profile: browser chaff generator, hosts file builder, private DNS picks and ad ID reset guides.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "T. Hunold",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "build:images": "node scripts/build-images.mjs",
+    "set-domain": "node scripts/set-domain.mjs"
+  },
+  "keywords": [
+    "privacy",
+    "ad-blocking",
+    "obfuscation",
+    "chaff",
+    "hosts-file",
+    "dns",
+    "pixel-art"
+  ]
+}

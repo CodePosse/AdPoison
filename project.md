@@ -25,7 +25,7 @@ https://www.reddit.com/r/PixelArt/comments/hddfoc/tried_to_breathe_some_life_int
 
 ### Chaff
 
-used to work as an extension but now disabled. There is a browser version we may reference.
+This used to work as an extension but now disabled in Chrome. There is a browser version we may reference.
 - https://www.deploychaff.com/
 - https://github.com/immutabledev/chaff
 - https://chaff.en.softonic.com/chrome/extension?ex=RAMP-4839.0&rex=true
@@ -41,12 +41,12 @@ used to work as an extension but now disabled. There is a browser version we may
 ## Technical
 
 ### Suggestions
-A use of responsive css-grid and the framework can be angular, react, vue, next, vite. 
+A use of responsive css-grid and the framework can be angular, react, vue, next, vite if deemed necessary.
 
 
 ### Deliverables
 
-A directory structure as follows.
+A directory structure as follows for a static site if anything else is too cumbersome.
 
 ```
 Root
@@ -68,3 +68,7 @@ CSS and JS should be seperate files that could be referenced on future pages if 
 #### Features
 
 We want to utilize advantages for SEO like schemas, sitemaps, webshare api, SEO/Opengraph/Twitter card, minimum WCAG.
+
+#### Readme.md
+
+Updated readme.md file with version shields if needed.

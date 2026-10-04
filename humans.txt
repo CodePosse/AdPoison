@@ -1,0 +1,8 @@
+/* TEAM */
+Creator: T. Hunold
+Site: https://adpoison.example
+
+/* SITE */
+Standards: HTML5, CSS3, schema.org
+Components: none. Vanilla JS, no trackers, no frameworks.
+Fonts: Press Start 2P, VT323 (SIL Open Font License), self-hosted

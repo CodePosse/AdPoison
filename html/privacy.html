@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Notice | Ad Poison</title>
+  <meta name="description" content="Ad Poison collects nothing: no analytics, no cookies, no server. Here is exactly what stays in your browser.">
+  <meta name="theme-color" content="#16091f">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://adpoison.example/html/privacy.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ad Poison">
+  <meta property="og:title" content="Privacy Notice | Ad Poison">
+  <meta property="og:description" content="No analytics, no cookies, no server. Here is exactly what stays in your browser.">
+  <meta property="og:url" content="https://adpoison.example/html/privacy.html">
+  <meta property="og:image" content="https://adpoison.example/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A pixel-art sugar skull with wings next to the words Ad Poison.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Notice | Ad Poison">
+  <meta name="twitter:description" content="No analytics, no cookies, no server.">
+  <meta name="twitter:image" content="https://adpoison.example/assets/img/og-image.png">
+
+  <link rel="icon" href="../assets/img/skull.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/img/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adpoison.example/" },
+      { "@type": "ListItem", "position": 2, "name": "Privacy notice", "item": "https://adpoison.example/html/privacy.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><img src="../assets/img/skull.svg" alt="" width="36" height="36"><span>AD POISON</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#generator">Generator</a></li>
+          <li><a href="hosts.html">Hosts file</a></li>
+          <li><a href="dns.html">Private DNS</a></li>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Hygiene</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <div>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol><li><a href="../index.html">Home</a></li><li aria-current="page">Privacy notice</li></ol>
+          </nav>
+          <h1 id="page-title">We collect nothing</h1>
+          <p class="lede">A privacy tool that tracked you would be a sick joke. So this site doesn't.</p>
+        </div>
+        <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>What this site does not do</h2>
+        <ul>
+          <li>No analytics, pixels, heatmaps or fingerprinting.</li>
+          <li>No cookies.</li>
+          <li>No accounts, forms or server-side code. It's plain HTML, CSS and JavaScript.</li>
+          <li>No third-party requests: fonts and images are served from this site.</li>
+        </ul>
+
+        <h2>What stays in your browser</h2>
+        <p>To remember your choices, the site uses your browser's <code>localStorage</code>, prefixed <code>adpoison:</code>. It never leaves your device:</p>
+        <ul>
+          <li>Chaff generator settings and a lifetime hop counter.</li>
+          <li>Hosts builder selections and custom domains.</li>
+          <li>Checklist ticks on the reset and hygiene pages.</li>
+        </ul>
+        <p>Clear it any time by clearing this site's data in your browser, or press the button below.</p>
+        <p><button type="button" class="btn btn--danger btn--sm" id="wipe-local">Wipe my Ad Poison data</button></p>
+
+        <h2>The chaff window</h2>
+        <p>When you run the generator, the extra window visits the destinations you choose (for example Google or Amazon). Those sites see the visit like any other, under their own privacy policies. That's the point: they receive decoy activity. Ad Poison itself never sees what happens in that window.</p>
+
+        <h2>Your host</h2>
+        <p>Whoever hosts this copy of Ad Poison may keep standard server access logs (IP address, time, page requested). Check their policy, or run your own copy: the source is open.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="footer-brand"><img src="../assets/img/skull.svg" alt="" width="44" height="44"><strong>AD POISON</strong></div>
+        <p class="mt-1">Scramble your ad profile. No tracking on this site, ever.</p>
+      </div>
+      <nav aria-label="Tools">
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="../index.html#generator">Chaff generator</a></li>
+          <li><a href="hosts.html">Hosts file builder</a></li>
+          <li><a href="dns.html">Private DNS picks</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Browser hygiene</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; <span data-year>2026</span> Ad Poison. Released under the MIT License. Not affiliated with any company mentioned. Information only, not legal advice.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/utils/helpers.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

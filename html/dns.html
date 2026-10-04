@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Private DNS for Blocking Ads &amp; Trackers (Free &amp; Paid) | Ad Poison</title>
+  <meta name="description" content="Compare free and paid private DNS services that block ads and trackers, including AdGuard DNS, Mullvad, Control D, NextDNS and Pi-hole, with setup steps for every device.">
+  <meta name="theme-color" content="#16091f">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://adpoison.example/html/dns.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ad Poison">
+  <meta property="og:title" content="Private DNS That Blocks Ads | Ad Poison">
+  <meta property="og:description" content="Free and paid DNS resolvers that block ads and trackers on every device, with setup steps.">
+  <meta property="og:url" content="https://adpoison.example/html/dns.html">
+  <meta property="og:image" content="https://adpoison.example/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A pixel-art sugar skull with wings next to the words Ad Poison.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Private DNS That Blocks Ads | Ad Poison">
+  <meta name="twitter:description" content="Free and paid DNS resolvers that block ads and trackers on every device.">
+  <meta name="twitter:image" content="https://adpoison.example/assets/img/og-image.png">
+
+  <link rel="icon" href="../assets/img/skull.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/img/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adpoison.example/" },
+          { "@type": "ListItem", "position": 2, "name": "Private DNS", "item": "https://adpoison.example/html/dns.html" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Private DNS services that block ads and trackers",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "AdGuard DNS", "url": "https://adguard-dns.io/" },
+          { "@type": "ListItem", "position": 2, "name": "Mullvad DNS", "url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls" },
+          { "@type": "ListItem", "position": 3, "name": "Control D", "url": "https://controld.com/free-dns" },
+          { "@type": "ListItem", "position": 4, "name": "NextDNS", "url": "https://nextdns.io/" },
+          { "@type": "ListItem", "position": 5, "name": "Pi-hole", "url": "https://pi-hole.net/" },
+          { "@type": "ListItem", "position": 6, "name": "AdGuard Home", "url": "https://github.com/AdguardTeam/AdGuardHome" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><img src="../assets/img/skull.svg" alt="" width="36" height="36"><span>AD POISON</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#generator">Generator</a></li>
+          <li><a href="hosts.html">Hosts file</a></li>
+          <li><a href="dns.html" aria-current="page">Private DNS</a></li>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Hygiene</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <div>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol><li><a href="../index.html">Home</a></li><li aria-current="page">Private DNS</li></ol>
+          </nav>
+          <span class="eyebrow">Step 02 &middot; Block</span>
+          <h1 id="page-title">Private DNS that bites back</h1>
+          <p class="lede">Every app on every device looks up domain names before it connects. Swap your internet provider's DNS for one that refuses to answer for ad and tracker domains, and they vanish everywhere, even inside apps.</p>
+        </div>
+        <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="picks-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="picks-title">Our picks</h2>
+          <p>All of these encrypt your lookups (DNS-over-HTTPS / DNS-over-TLS), so your internet provider can't read or sell your browsing history. Addresses change occasionally: confirm on the provider's site before setting up.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Private DNS comparison</caption>
+            <thead>
+              <tr><th scope="col">Service</th><th scope="col">Price</th><th scope="col">Blocks ads</th><th scope="col">Android Private DNS hostname</th><th scope="col">Best for</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a href="https://adguard-dns.io/en/public-dns.html">AdGuard DNS</a></th><td><span class="pill">Free</span> <span class="pill pill--paid">Paid plans</span></td><td>Yes</td><td><code>dns.adguard-dns.com</code></td><td>Zero-config ad blocking. Custom rules on paid tiers.</td></tr>
+              <tr><th scope="row"><a href="https://mullvad.net/en/help/dns-over-https-and-dns-over-tls">Mullvad DNS</a></th><td><span class="pill">Free</span></td><td>Yes (on <em>base</em> / <em>adblock</em>)</td><td><code>base.dns.mullvad.net</code></td><td>Privacy purists. No account, no logs.</td></tr>
+              <tr><th scope="row"><a href="https://controld.com/free-dns">Control D</a></th><td><span class="pill">Free</span> <span class="pill pill--paid">Paid plans</span></td><td>Yes (on <em>p2</em>)</td><td><code>p2.freedns.controld.com</code></td><td>Power users who want per-device profiles.</td></tr>
+              <tr><th scope="row"><a href="https://nextdns.io/">NextDNS</a></th><td><span class="pill">Free tier</span> <span class="pill pill--paid">Paid</span></td><td>Yes (you choose lists)</td><td>Personal ID from your dashboard</td><td>Fine-grained control, analytics you own, allow/deny lists.</td></tr>
+              <tr><th scope="row"><a href="https://quad9.net/">Quad9</a></th><td><span class="pill">Free</span></td><td><span class="pill pill--no">No</span> malware only</td><td><code>dns.quad9.net</code></td><td>Non-profit, privacy-first, blocks malicious domains.</td></tr>
+              <tr><th scope="row"><a href="https://one.one.one.one/">Cloudflare 1.1.1.1</a></th><td><span class="pill">Free</span></td><td><span class="pill pill--no">No</span></td><td><code>one.one.one.one</code></td><td>Speed and encryption. Pair with a hosts file or browser blocker.</td></tr>
+              <tr><th scope="row"><a href="https://pi-hole.net/">Pi-hole</a></th><td><span class="pill pill--self">Self-host</span></td><td>Yes (any lists)</td><td>Your own server</td><td>Whole-home blocking on a Raspberry Pi. Full control.</td></tr>
+              <tr><th scope="row"><a href="https://github.com/AdguardTeam/AdGuardHome">AdGuard Home</a></th><td><span class="pill pill--self">Self-host</span></td><td>Yes (any lists)</td><td>Your own server</td><td>Like Pi-hole, with built-in encrypted DNS.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">NextDNS's free tier covers a generous monthly query allowance; once you pass it, filtering pauses until next month while DNS keeps working.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="setup-title">
+      <div class="wrap prose">
+        <h2 id="setup-title">Set it up</h2>
+        <p>Start with your phone (biggest app-tracking surface), then your router to cover the whole house.</p>
+
+        <details class="acc" open>
+          <summary>Android 9+</summary>
+          <div class="acc__body">
+            <ol>
+              <li>Open <strong>Settings &rarr; Network &amp; internet</strong> (or <em>Connections &rarr; More connection settings</em> on Samsung).</li>
+              <li>Tap <strong>Private DNS</strong>.</li>
+              <li>Choose <strong>Private DNS provider hostname</strong> and enter a hostname from the table, e.g. <code>dns.adguard-dns.com</code>.</li>
+              <li>Save. It applies on Wi-Fi and mobile data, system-wide.</li>
+            </ol>
+            <div class="btn-row"><button type="button" class="btn btn--sm btn--ghost" data-copy="dns.adguard-dns.com">Copy AdGuard hostname</button><button type="button" class="btn btn--sm btn--ghost" data-copy="base.dns.mullvad.net">Copy Mullvad hostname</button></div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>iPhone &amp; iPad</summary>
+          <div class="acc__body">
+            <p>iOS uses configuration profiles for encrypted DNS.</p>
+            <ol>
+              <li>In Safari, open your provider's setup page (AdGuard, NextDNS, Control D and Mullvad all publish one) and download the profile.</li>
+              <li>Go to <strong>Settings &rarr; General &rarr; VPN &amp; Device Management</strong>, tap the downloaded profile and install it.</li>
+              <li>Confirm under <strong>Settings &rarr; General &rarr; VPN &amp; Device Management &rarr; DNS</strong>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Windows 11</summary>
+          <div class="acc__body">
+            <ol>
+              <li><strong>Settings &rarr; Network &amp; internet</strong> &rarr; select <em>Wi-Fi</em> or <em>Ethernet</em> &rarr; your connection, or <em>Hardware properties</em>.</li>
+              <li>Next to <strong>DNS server assignment</strong>, choose <strong>Edit &rarr; Manual</strong>, enable IPv4.</li>
+              <li>Enter the provider's IPv4 addresses and set <strong>DNS over HTTPS</strong> to <em>On (automatic template)</em> where offered.</li>
+            </ol>
+            <p>AdGuard DNS IPv4: <code>94.140.14.14</code> and <code>94.140.15.15</code>.</p>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>macOS</summary>
+          <div class="acc__body">
+            <p>Install the provider's configuration profile (same as iPhone) for encrypted DNS, or set plain servers in <strong>System Settings &rarr; Network &rarr; your connection &rarr; Details &rarr; DNS</strong>.</p>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Just the browser (Chrome, Edge, Firefox)</summary>
+          <div class="acc__body">
+            <ul>
+              <li><strong>Chrome / Edge / Brave:</strong> Settings &rarr; Privacy and security &rarr; Security &rarr; <em>Use secure DNS</em> &rarr; choose <em>Custom</em> and paste a DoH URL such as <code>https://dns.adguard-dns.com/dns-query</code>.</li>
+              <li><strong>Firefox:</strong> Settings &rarr; Privacy &amp; Security &rarr; <em>DNS over HTTPS</em> &rarr; <em>Max Protection</em> &rarr; <em>Custom</em>.</li>
+            </ul>
+            <div class="btn-row"><button type="button" class="btn btn--sm btn--ghost" data-copy="https://dns.adguard-dns.com/dns-query">Copy AdGuard DoH URL</button><button type="button" class="btn btn--sm btn--ghost" data-copy="https://base.dns.mullvad.net/dns-query">Copy Mullvad DoH URL</button></div>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Router (whole household)</summary>
+          <div class="acc__body">
+            <p>Log in to your router (often <code>192.168.0.1</code> or <code>192.168.1.1</code>), find <strong>DNS</strong> under WAN, Internet or DHCP settings, and replace the automatic servers with your provider's IPv4 addresses. Every device that joins your Wi-Fi, including smart TVs and consoles, is now filtered. For the most control, point the router at a <a href="https://pi-hole.net/">Pi-hole</a> on your network.</p>
+          </div>
+        </details>
+
+        <p class="callout callout--warn"><strong>After switching:</strong> flush your DNS cache so old answers don't linger. Commands are on the <a href="hosts.html#flush-title">hosts page</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="footer-brand"><img src="../assets/img/skull.svg" alt="" width="44" height="44"><strong>AD POISON</strong></div>
+        <p class="mt-1">Scramble your ad profile. No tracking on this site, ever.</p>
+      </div>
+      <nav aria-label="Tools">
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="../index.html#generator">Chaff generator</a></li>
+          <li><a href="hosts.html">Hosts file builder</a></li>
+          <li><a href="dns.html">Private DNS picks</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Browser hygiene</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; <span data-year>2026</span> Ad Poison. Released under the MIT License. Not affiliated with any company mentioned. Information only, not legal advice.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/utils/helpers.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

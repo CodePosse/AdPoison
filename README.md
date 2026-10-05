@@ -29,6 +29,7 @@
 | **Block** | `html/dns.html` | Free and paid private DNS comparison (AdGuard, Mullvad, Control D, NextDNS, Quad9, Pi-hole...) with setup steps per device. |
 | **Reset** | `html/reset.html` | A saved checklist to delete advertising IDs and turn off personalization at Google (including the [My Ad Center hard link](https://myadcenter.google.com/personalizationoff?n=true)), Meta, Amazon, Microsoft and more. |
 | **Reset** | `html/hygiene.html` | A weekly scrub checklist, per-browser settings, extensions, and auto-clear policies (Firefox `policies.json`, Chrome `.reg`). |
+| **Blur** | `html/fingerprint.html` | A private, in-browser fingerprint check that shows which signals change between sessions, plus tiered anti-fingerprinting picks (Brave, Firefox, Safari, Mullvad, Tor, JShelter, CanvasBlocker, Chromixer). |
 
 The site itself has no analytics, no cookies, no third-party requests (fonts are self-hosted), and a strict Content Security Policy.
 
@@ -41,6 +42,15 @@ Pressing **Start** (a real click, so popup blockers allow it) opens one extra wi
 - Timing gets ±40% jitter. A Web Worker keeps the timer running while the tab is in the background, and sessions stop on their own after the duration you pick.
 - **Persona mode** sticks to one coherent fake identity, which is harder to filter out than random noise. Personas live in `assets/utils/wordbank.js`, so you can add your own.
 
+## How the fingerprint check works
+
+`html/fingerprint.html` reads the signals fingerprinting scripts use (canvas, WebGL, audio, fonts, screen and hardware, locale) and hashes each one, all inside the tab. It makes no network requests.
+
+- **Vs previous scan**: the last scan's per-signal hashes are kept in `localStorage`, so after a browser restart you can see whether your browser randomizes them (Brave does by default).
+- **Two reads in a row**: canvas, WebGL, audio and fonts are read twice per scan. A difference means the browser adds fresh noise on every read.
+- **Blocked**: a blank canvas or missing API counts as blocked (Tor Browser, Firefox `resistFingerprinting`).
+- The fingerprint ID is drawn as a 9×9 pixel sugar skull, so a change is obvious at a glance.
+
 ## Project structure
 
 ```
@@ -52,13 +62,15 @@ Pressing **Start** (a real click, so popup blockers allow it) opens one extra wi
 │   ├── dns.html
 │   ├── reset.html
 │   ├── hygiene.html
+│   ├── fingerprint.html
 │   └── privacy.html
 ├── assets/
 │   ├── css/main.css         # Single shared stylesheet (tokens, components, print, reduced motion)
 │   ├── js/
 │   │   ├── main.js          # Nav, copy buttons, Web Share, checklists, mascot
 │   │   ├── chaff.js         # Generator engine
-│   │   └── hosts.js         # Hosts-file builder
+│   │   ├── hosts.js         # Hosts-file builder
+│   │   └── fingerprint.js   # Local fingerprint check (nothing leaves the tab)
 │   ├── utils/
 │   │   ├── helpers.js       # window.AP: storage, toast, clipboard, download, crypto random
 │   │   ├── wordbank.js      # Personas and query words

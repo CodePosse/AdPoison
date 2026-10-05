@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; worker-src 'self' blob:; frame-src https:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <title>Browser Fingerprint Check &amp; Anti-Fingerprinting Guide | Ad Poison</title>
+  <meta name="description" content="See whether your browser fingerprint changes between sessions with a private, in-browser check, then pick a defence: Brave, Firefox, Mullvad Browser, Tor Browser, JShelter or CanvasBlocker.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#16091f">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://codeposse.github.io/AdPoison/html/fingerprint.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ad Poison">
+  <meta property="og:title" content="Browser Fingerprint Check | Ad Poison">
+  <meta property="og:description" content="A private, in-browser fingerprint check plus the browsers and extensions that blur you.">
+  <meta property="og:url" content="https://codeposse.github.io/AdPoison/html/fingerprint.html">
+  <meta property="og:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A pixel-art sugar skull with wings next to the words Ad Poison.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Browser Fingerprint Check | Ad Poison">
+  <meta name="twitter:description" content="A private, in-browser fingerprint check plus the browsers and extensions that blur you.">
+  <meta name="twitter:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
+
+  <link rel="icon" href="../assets/img/skull.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/img/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="preload" href="../assets/fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/vt323.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/main.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://codeposse.github.io/AdPoison/" },
+          { "@type": "ListItem", "position": 2, "name": "Fingerprint check", "item": "https://codeposse.github.io/AdPoison/html/fingerprint.html" }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Ad Poison Fingerprint Check",
+        "url": "https://codeposse.github.io/AdPoison/html/fingerprint.html",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Any modern web browser",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Reads canvas, WebGL, audio, font, hardware and locale signals inside your browser and tells you which ones change between sessions. Nothing is sent anywhere."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does a VPN stop browser fingerprinting?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. A VPN hides your IP address, but your fingerprint is built from your browser, graphics card, fonts and settings, which look the same through any network." }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I install several anti-fingerprinting extensions?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Every extension changes how your browser behaves, and stacking them makes you rarer, not safer. Pick one approach: a privacy browser, or one extension." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is randomizing or blending in better?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Blending in (Tor Browser, Mullvad Browser) is strongest because millions of users share one fingerprint. Randomizing (Brave) is easier to live with day to day and still stops trackers linking your sessions." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><img src="../assets/img/skull.svg" alt="" width="36" height="36"><span>AD POISON</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html#generator">Generator</a></li>
+          <li><a href="hosts.html">Hosts file</a></li>
+          <li><a href="dns.html">Private DNS</a></li>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Hygiene</a></li>
+          <li><a href="fingerprint.html" aria-current="page">Fingerprint</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <div>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol><li><a href="../index.html">Home</a></li><li aria-current="page">Fingerprint check</li></ol>
+          </nav>
+          <span class="eyebrow">Step 04 &middot; Blur</span>
+          <h1 id="page-title">Fingerprint check</h1>
+          <p class="lede">Clear every cookie and trackers can still recognize you by how your browser draws, sounds and measures. Check whether your fingerprint holds still, then pick a way to blur it.</p>
+        </div>
+        <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
+      </div>
+    </section>
+
+    <!-- ============ THE CHECK ============ -->
+    <section class="section section--alt" aria-labelledby="check-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="check-title">Scan your browser</h2>
+          <p>This reads the same signals fingerprinting scripts use, right here in this tab. Nothing is sent anywhere. Only the previous scan's hashes are kept in this browser, so the next scan can tell you what changed.</p>
+        </div>
+
+        <noscript>
+          <p class="callout">The check needs JavaScript. So do most fingerprinting scripts: blocking JavaScript (for example with NoScript, or Tor Browser's <em>Safest</em> level) is one of the strongest defences, at the cost of broken sites.</p>
+        </noscript>
+
+        <div class="screen screen--auto" id="fp">
+          <p class="status-line" id="fp-status" role="status" aria-live="polite">Waiting to scan&hellip;</p>
+          <div class="fp-id">
+            <canvas id="fp-avatar" width="9" height="9" role="img" aria-label="Pixel sugar skull generated from your fingerprint ID"></canvas>
+            <dl class="hud">
+              <div class="hud__stat"><dt>Fingerprint ID</dt><dd id="fp-id">&mdash;</dd></div>
+              <div class="hud__stat"><dt>Signals blurred</dt><dd id="fp-moving">&mdash;</dd></div>
+              <div class="hud__stat"><dt>Previous scan</dt><dd id="fp-prev">&mdash;</dd></div>
+            </dl>
+          </div>
+          <p class="fp-verdict" id="fp-verdict" aria-live="polite"></p>
+          <div class="btn-row">
+            <button type="button" class="btn" id="fp-scan">Scan again</button>
+            <button type="button" class="btn btn--sm btn--ghost" id="fp-forget">Forget previous scan</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>What each signal did</caption>
+            <thead>
+              <tr><th scope="col">Signal</th><th scope="col">Hash</th><th scope="col">Vs previous scan</th><th scope="col">Two reads in a row</th><th scope="col">Detail</th></tr>
+            </thead>
+            <tbody id="fp-rows">
+              <tr><td colspan="5" class="muted">Results appear here after the scan.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid mt-2">
+          <article class="card pixel-box">
+            <h3>Changed</h3>
+            <p>Different from your previous scan. After a browser restart, that's randomization working: a tracker sees a new person.</p>
+          </article>
+          <article class="card pixel-box">
+            <h3>Noisy</h3>
+            <p>Different on two back-to-back reads. Your browser adds fresh noise every time. Hard to track, but some scripts can spot the noise itself.</p>
+          </article>
+          <article class="card pixel-box">
+            <h3>Same / Stable</h3>
+            <p>Identical every time. Fine in Tor or Mullvad Browser, where everyone matches. Anywhere else, it's a stable ID you can't clear.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT IT IS ============ -->
+    <section class="section" aria-labelledby="what-title">
+      <div class="wrap prose">
+        <h2 id="what-title">What fingerprinting is</h2>
+        <p>Every browser leaks small facts: the exact pixels it draws for a line of text, your graphics card, installed fonts, screen size, time zone. None is unique on its own. Combined, they usually are. Studies by AmIUnique and the EFF (the team behind Cover Your Tracks) found that most browsers they tested were unique.</p>
+        <p>That matters for Ad Poison because a fingerprint survives everything on the <a href="reset.html">reset</a> and <a href="hygiene.html">hygiene</a> pages. Clear cookies, reset your ad ID, and a fingerprinting script can still say &ldquo;same browser as last week&rdquo; and reattach your old profile. Blurring your fingerprint keeps those resets from being undone.</p>
+        <p class="callout"><strong>Works with the generator:</strong> chaff fills the profile tied to your cookies with junk. Fingerprint protection stops trackers linking a fresh, clean session back to the old one. They cover different holes.</p>
+      </div>
+    </section>
+
+    <!-- ============ STRATEGIES ============ -->
+    <section class="section section--alt" aria-labelledby="strat-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="strat-title">Two ways to blur</h2>
+          <p>Pick one approach. Mixing them, or stacking extensions, tends to make you rarer.</p>
+        </div>
+        <div class="grid grid--2">
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">=</div>
+            <h3>Blend in</h3>
+            <p>Make every user look identical, so your fingerprint is shared with a huge crowd. This is the strongest approach, but it only works if you don't customize: no extra extensions, default window size, default settings.</p>
+            <p><strong>Who does it:</strong> Tor Browser, Mullvad Browser, and Firefox's <code>resistFingerprinting</code> mode.</p>
+          </article>
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">?</div>
+            <h3>Randomize</h3>
+            <p>Add small, invisible changes to the values scripts read, so you look like a different person each session. It's easier to live with because you keep your normal browser habits, but the noise itself can sometimes be detected.</p>
+            <p><strong>Who does it:</strong> Brave (built in), JShelter, CanvasBlocker, Chromixer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PICKS ============ -->
+    <section class="section" aria-labelledby="picks-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="picks-title">Our picks, easiest first</h2>
+          <p>A browser with protection built in beats any extension: it's tested by millions and updates itself.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Anti-fingerprinting options</caption>
+            <thead>
+              <tr><th scope="col">Option</th><th scope="col">Effort</th><th scope="col">Approach</th><th scope="col">Good to know</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><a href="https://brave.com/">Brave</a></th><td><span class="pill">Easiest</span></td><td>Randomize</td><td>On by default. Changes per site and per session. Chromium-based, so Chrome extensions and habits carry over.</td></tr>
+              <tr><th scope="row"><a href="https://www.mozilla.org/firefox/">Firefox</a></th><td><span class="pill">Easy</span></td><td>Block + reduce</td><td>Set Enhanced Tracking Protection to <strong>Strict</strong>: it blocks known fingerprinting scripts and limits what others can read.</td></tr>
+              <tr><th scope="row"><a href="https://www.apple.com/safari/">Safari</a></th><td><span class="pill">Easy</span></td><td>Reduce</td><td>Set <em>Advanced Tracking and Fingerprinting Protection</em> to <strong>All Browsing</strong> (it's on in Private Browsing by default).</td></tr>
+              <tr><th scope="row"><a href="https://mullvad.net/browser">Mullvad Browser</a></th><td><span class="pill pill--paid">Strong</span></td><td>Blend in</td><td>Tor Browser's protections without the Tor network. Free, no Mullvad account needed. Pair with a VPN to hide your IP too.</td></tr>
+              <tr><th scope="row"><a href="https://www.torproject.org/">Tor Browser</a></th><td><span class="pill pill--paid">Strongest</span></td><td>Blend in</td><td>Biggest crowd to hide in and hides your IP. Slower, and some sites block Tor or show more CAPTCHAs.</td></tr>
+              <tr><th scope="row"><a href="https://jshelter.org/">JShelter</a></th><td><span class="pill pill--self">Extension</span></td><td>Randomize + restrict</td><td>Backed by the Free Software Foundation. In the Chrome, Edge and Firefox stores, so it auto-updates. Can break some sites at higher levels.</td></tr>
+              <tr><th scope="row"><a href="https://addons.mozilla.org/firefox/addon/canvasblocker/">CanvasBlocker</a></th><td><span class="pill pill--self">Extension</span></td><td>Randomize</td><td>Firefox only. Long-running and configurable. Skip it if you already use Strict mode with <code>resistFingerprinting</code>.</td></tr>
+              <tr><th scope="row"><a href="https://github.com/arman-bd/chromixer">Chromixer</a></th><td><span class="pill pill--no">Experimental</span></td><td>Randomize</td><td>Covers a lot of signals in Chrome, but see the caveats below before installing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Chrome has no fingerprint protection for normal browsing. If you're staying on Chrome, JShelter is the safest add-on; switching to Brave is the bigger win.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHROMIXER ============ -->
+    <section class="section section--alt" aria-labelledby="chromixer-title">
+      <div class="wrap prose">
+        <h2 id="chromixer-title">About Chromixer</h2>
+        <p><a href="https://github.com/arman-bd/chromixer">Chromixer</a> is an open-source (MIT) Chrome extension that randomizes canvas, WebGL, audio, fonts, screen and hardware values, WebRTC, client rects and more, with a new random seed each session. On paper it covers more ground than most extensions, and you can run this page's check to watch it work.</p>
+        <p class="callout callout--warn"><strong>Why it's last on the list:</strong> At the time of writing (October 2026) it isn't in the Chrome Web Store. You install it by downloading the source and loading it unpacked in Developer mode, so it never updates itself and Chrome warns about it on every launch. It can read and change every page you visit, and it's a young project that few people have reviewed. Randomizing values one by one can also produce combinations no real device has (a phone screen with a desktop GPU), which can make you <em>easier</em> to spot.</p>
+        <p>If you're comfortable reading the code and pulling updates yourself, it's a fun one to try and a good way to see how randomization works. Everyone else should start with Brave or JShelter.</p>
+      </div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section class="section" aria-labelledby="settings-title">
+      <div class="wrap prose">
+        <h2 id="settings-title">Turn it on</h2>
+
+        <details class="acc" open>
+          <summary>Brave</summary>
+          <div class="acc__body">
+            <ul>
+              <li>Settings &rarr; <em>Shields</em>: make sure <strong>Block fingerprinting</strong> is on (it is by default).</li>
+              <li>Leave your language list at one entry. Extra languages add identifying detail.</li>
+              <li>Test it: scan here, restart Brave, scan again. Canvas, WebGL and audio should all show <em>Changed</em>.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Firefox</summary>
+          <div class="acc__body">
+            <ul>
+              <li>Settings &rarr; Privacy &amp; Security &rarr; <em>Enhanced Tracking Protection</em> &rarr; <strong>Strict</strong>. This blocks known and suspected fingerprinters.</li>
+              <li>Optional, stronger: in <code>about:config</code> set <code>privacy.resistFingerprinting</code> to <code>true</code>. Your time zone reads as UTC, canvas reads are blocked or randomized, and some sites break. Mozilla doesn't recommend it for everyday use, so try it in a separate profile first.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Safari</summary>
+          <div class="acc__body">
+            <ul>
+              <li>Mac: Safari &rarr; Settings &rarr; <em>Advanced</em> &rarr; <em>Use advanced tracking and fingerprinting protection</em> &rarr; <strong>in all browsing</strong>.</li>
+              <li>iPhone and iPad: Settings &rarr; Apps &rarr; Safari &rarr; <em>Advanced</em> &rarr; <em>Advanced Tracking and Fingerprinting Protection</em> &rarr; <strong>All Browsing</strong>.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Tor Browser &amp; Mullvad Browser</summary>
+          <div class="acc__body">
+            <ul>
+              <li>Don't install extensions or change fonts. Every tweak moves you out of the crowd.</li>
+              <li>Don't maximize the window. Letterboxing keeps your window size in common buckets; a maximized window reveals your screen.</li>
+              <li>Raise the security level to <em>Safer</em> or <em>Safest</em> to disable more scripting when you don't need it.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="acc">
+          <summary>Chrome &amp; Edge</summary>
+          <div class="acc__body">
+            <ul>
+              <li>No built-in fingerprint protection for normal browsing. Install <a href="https://jshelter.org/">JShelter</a> from your browser's store, or move your everyday browsing to Brave.</li>
+              <li>Edge's <em>Strict</em> tracking prevention (see <a href="hygiene.html">hygiene</a>) blocks some known fingerprinting scripts, but doesn't change what your browser reports.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ TEST ELSEWHERE ============ -->
+    <section class="section section--alt" aria-labelledby="tests-title">
+      <div class="wrap prose">
+        <h2 id="tests-title">Second opinions</h2>
+        <p>These sites compare your fingerprint against everyone they've tested, which this page can't do because it doesn't collect anything. They do see your browser's details while you test.</p>
+        <ul class="linklist">
+          <li><a href="https://coveryourtracks.eff.org/"><span>Cover Your Tracks</span><span>EFF &middot; how unique you are</span></a></li>
+          <li><a href="https://amiunique.org/"><span>AmIUnique</span><span>Research project &middot; per-signal rarity</span></a></li>
+          <li><a href="https://browserleaks.com/"><span>BrowserLeaks</span><span>Deep dive into each API</span></a></li>
+          <li><a href="https://abrahamjuliot.github.io/creepjs/"><span>CreepJS</span><span>Spots randomization and lies</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="wrap prose">
+        <h2 id="faq-title">Quick answers</h2>
+        <details class="acc">
+          <summary>Does a VPN stop browser fingerprinting?</summary>
+          <div class="acc__body">
+            <p>No. A VPN hides your IP address, but your fingerprint is built from your browser, graphics card, fonts and settings, which look the same through any network.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary>Should I install several anti-fingerprinting extensions?</summary>
+          <div class="acc__body">
+            <p>No. Every extension changes how your browser behaves, and stacking them makes you rarer, not safer. Pick one approach: a privacy browser, or one extension.</p>
+          </div>
+        </details>
+        <details class="acc">
+          <summary>Is randomizing or blending in better?</summary>
+          <div class="acc__body">
+            <p>Blending in (Tor Browser, Mullvad Browser) is strongest because millions of users share one fingerprint. Randomizing (Brave) is easier to live with day to day and still stops trackers linking your sessions.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <div class="footer-brand"><img src="../assets/img/skull.svg" alt="" width="44" height="44"><strong>AD POISON</strong></div>
+        <p class="mt-1">Scramble your ad profile. No tracking on this site, ever.</p>
+      </div>
+      <nav aria-label="Tools">
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="../index.html#generator">Chaff generator</a></li>
+          <li><a href="hosts.html">Hosts file builder</a></li>
+          <li><a href="dns.html">Private DNS picks</a></li>
+          <li><a href="fingerprint.html">Fingerprint check</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Guides">
+        <h2>Guides</h2>
+        <ul>
+          <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="hygiene.html">Browser hygiene</a></li>
+          <li><a href="privacy.html">Privacy notice</a></li>
+        </ul>
+      </nav>
+      <p class="footer-legal">&copy; <span data-year>2026</span> Ad Poison. Released under the MIT License. Not affiliated with any company mentioned. Information only, not legal advice.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/utils/helpers.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/fingerprint.js" defer></script>
+</body>
+</html>

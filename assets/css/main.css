@@ -286,6 +286,7 @@ kbd {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
 
 .card { display: flex; flex-direction: column; gap: 0.7rem; }
 .card__icon {
@@ -688,6 +689,25 @@ td code { white-space: nowrap; }
 .pill--paid { background: var(--marigold); }
 .pill--self { background: var(--violet); }
 .pill--no { background: var(--bone-dim); }
+.pill--new { background: var(--marigold); }
+.pill--noise { background: var(--violet); }
+
+/* ---------- Fingerprint check ---------- */
+.screen--auto { min-height: 0; margin-bottom: 2rem; }
+.fp-id { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.2rem; align-items: center; }
+.fp-id canvas {
+  width: 108px; height: 108px;
+  image-rendering: pixelated;
+  background: var(--ink);
+  box-shadow: 0 0 0 var(--px) var(--night-3);
+}
+.fp-verdict { max-width: 70ch; }
+.fp-verdict:empty { display: none; }
+#fp .btn-row { position: relative; z-index: 1; }
+@media (max-width: 640px) {
+  .fp-id { grid-template-columns: 1fr; justify-items: center; }
+  .fp-id .hud { width: 100%; grid-template-columns: 1fr; }
+}
 
 /* ---------- Checklist ---------- */
 .checklist { list-style: none; padding: 0; display: grid; gap: 0.8rem; }

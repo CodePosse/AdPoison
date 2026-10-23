@@ -441,6 +441,8 @@ kbd {
 }
 .page-hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
 .page-hero p.lede { font-size: 1.5rem; margin-top: 1rem; max-width: 60ch; color: var(--bone); }
+.updated { margin-top: 0.75rem; color: var(--bone-dim); font-size: 1.15rem; }
+.updated::before { content: "\25CF"; color: var(--green); margin-right: 0.4rem; }
 .page-hero img { width: 140px; height: auto; animation: bob 1.4s steps(6) infinite; }
 @media (max-width: 640px) {
   .page-hero .wrap { grid-template-columns: 1fr; }
@@ -460,6 +462,7 @@ kbd {
 .prose > * + * { margin-top: 1rem; }
 .prose h2 { margin-top: 2.5rem; }
 .prose h3 { margin-top: 1.75rem; }
+.prose h4 { margin-top: 1.25rem; color: var(--pink); font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .prose ul, .prose ol { padding-left: 1.4rem; }
 .prose li + li { margin-top: 0.35rem; }
 .prose li::marker { color: var(--pink); }
@@ -580,7 +583,7 @@ input[type="range"] {
   accent-color: var(--pink);
   height: 32px;
 }
-select, input[type="text"], input[type="url"], textarea {
+select, input[type="text"], input[type="url"], input[type="email"], textarea {
   background: var(--ink);
   border: 0;
   box-shadow: 0 0 0 3px var(--bone);

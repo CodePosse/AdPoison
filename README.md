@@ -27,7 +27,8 @@
 | **Noise** | `index.html#generator` | A chaff generator that browses as a fake persona (or pure chaos) at jittered intervals. |
 | **Block** | `html/hosts.html` | A hosts-file builder (copy or download), one-line install commands per OS, flush DNS commands, links to maintained lists for Pi-hole. |
 | **Block** | `html/dns.html` | Free and paid private DNS comparison (AdGuard, Mullvad, Control D, NextDNS, Quad9, Pi-hole...) with setup steps per device. |
-| **Reset** | `html/reset.html` | A saved checklist to delete advertising IDs and turn off personalization at Google (including the [My Ad Center hard link](https://myadcenter.google.com/personalizationoff?n=true)), Meta, Amazon, Microsoft and more. |
+| **Reset** | `html/reset.html` | A saved checklist to delete advertising IDs and turn off personalization at Google (including the [My Ad Center hard link](https://myadcenter.google.com/personalizationoff?n=true)), Amazon, Microsoft and more, plus a full Meta section: reset (clear and disconnect off-Meta activity, ad partners, audience lists), poison (decoy interests, hide-ad training) and nuke. |
+| **Reset** | `html/brokers.html` | A free, DIY take on Incogni, DeleteMe and Cloaked: masking tools (email aliases, virtual numbers and cards), California DROP and other free tools, a saved opt-out checklist for the big people-search and marketing brokers, and a GDPR / CCPA / US state deletion letter generator (copy, download or open in your email app; nothing is stored). |
 | **Reset** | `html/hygiene.html` | A weekly scrub checklist, per-browser settings, extensions, and auto-clear policies (Firefox `policies.json`, Chrome `.reg`). |
 | **Blur** | `html/fingerprint.html` | A private, in-browser fingerprint check that shows which signals change between sessions, plus tiered anti-fingerprinting picks (Brave, Firefox, Safari, Mullvad, Tor, JShelter, CanvasBlocker, Chromixer). |
 
@@ -61,6 +62,7 @@ Pressing **Start** (a real click, so popup blockers allow it) opens one extra wi
 │   ├── hosts.html
 │   ├── dns.html
 │   ├── reset.html
+│   ├── brokers.html
 │   ├── hygiene.html
 │   ├── fingerprint.html
 │   └── privacy.html
@@ -70,6 +72,7 @@ Pressing **Start** (a real click, so popup blockers allow it) opens one extra wi
 │   │   ├── main.js          # Nav, copy buttons, Web Share, checklists, mascot
 │   │   ├── chaff.js         # Generator engine
 │   │   ├── hosts.js         # Hosts-file builder
+│   │   ├── brokers.js       # Deletion request letter generator (nothing stored)
 │   │   └── fingerprint.js   # Local fingerprint check (nothing leaves the tab)
 │   ├── utils/
 │   │   ├── helpers.js       # window.AP: storage, toast, clipboard, download, crypto random

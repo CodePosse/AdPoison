@@ -16,6 +16,7 @@
   <meta property="og:title" content="Delete Your Advertising IDs | Ad Poison">
   <meta property="og:description" content="A tick-box checklist to wipe ad IDs and switch off ad personalization everywhere.">
   <meta property="og:url" content="https://codeposse.github.io/AdPoison/html/reset.html">
+  <meta property="article:modified_time" content="2026-10-22">
   <meta property="og:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -47,13 +48,15 @@
       {
         "@type": "HowTo",
         "name": "Delete your advertising IDs and turn off ad personalization",
-        "totalTime": "PT15M",
+        "totalTime": "PT30M",
         "step": [
           { "@type": "HowToStep", "position": 1, "name": "Google", "text": "Turn off personalized ads in Google My Ad Center and pause Web & App Activity.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#google" },
           { "@type": "HowToStep", "position": 2, "name": "Android", "text": "Settings, Security & privacy, Privacy, Ads, Delete advertising ID.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#android" },
           { "@type": "HowToStep", "position": 3, "name": "iPhone and iPad", "text": "Settings, Privacy & Security, Tracking, turn off Allow Apps to Request to Track. Then Apple Advertising, turn off Personalized Ads.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#apple" },
           { "@type": "HowToStep", "position": 4, "name": "Windows", "text": "Settings, Privacy & security, General, turn off personalized ads using my advertising ID.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#windows" },
-          { "@type": "HowToStep", "position": 5, "name": "Other platforms", "text": "Turn off ad personalization at Meta, Amazon, Microsoft and the industry opt-out pages.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#platforms" }
+          { "@type": "HowToStep", "position": 5, "name": "Meta", "text": "In Accounts Center, clear and disconnect your activity off Meta technologies, turn off activity information from ad partners, and remove yourself from advertiser audience lists.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#meta" },
+          { "@type": "HowToStep", "position": 6, "name": "Other platforms", "text": "Turn off ad personalization at Amazon, X and the industry opt-out pages.", "url": "https://codeposse.github.io/AdPoison/html/reset.html#platforms" },
+          { "@type": "HowToStep", "position": 7, "name": "Data brokers", "text": "Opt out of people-search sites and data brokers, or send them deletion requests.", "url": "https://codeposse.github.io/AdPoison/html/brokers.html" }
         ]
       }
     ]
@@ -73,6 +76,7 @@
           <li><a href="hosts.html">Hosts file</a></li>
           <li><a href="dns.html">Private DNS</a></li>
           <li><a href="reset.html" aria-current="page">Reset ad IDs</a></li>
+          <li><a href="brokers.html">Data brokers</a></li>
           <li><a href="hygiene.html">Hygiene</a></li>
           <li><a href="fingerprint.html">Fingerprint</a></li>
         </ul>
@@ -90,6 +94,7 @@
           <span class="eyebrow">Step 03 &middot; Reset</span>
           <h1 id="page-title">Kill your ad IDs</h1>
           <p class="lede">Your phone and computer hand apps a unique advertising ID: a name tag that follows you between apps and data brokers. Delete it, then switch off personalization at the big platforms. Tick each box as you go; progress is saved in this browser only.</p>
+          <p class="updated">Updated <time datetime="2026-10-22">October 22, 2026</time></p>
         </div>
         <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
       </div>
@@ -141,12 +146,43 @@
           </li>
         </ul>
 
-        <h3 id="platforms" class="mt-2">Platforms &amp; the ad industry</h3>
+        <h3 id="meta" class="mt-2">Meta (Facebook, Instagram, Messenger, Threads)</h3>
+        <p>Meta builds most of your ad profile from activity <em>outside</em> its apps: the Meta Pixel on shopping sites, app SDKs, and customer lists that advertisers upload. One <a href="https://accountscenter.facebook.com/">Accounts Center</a> covers Facebook, Instagram, Messenger and Threads, so you only do this once. The paths below are for the web; the apps use the same names under <strong>Settings &rarr; Accounts Center</strong>.</p>
+        <h4>Reset: cut off the data</h4>
         <ul class="checklist" data-checklist="reset">
           <li>
-            <label class="check"><input type="checkbox" value="meta"><span><strong>Meta</strong> (Facebook &amp; Instagram): review ad topics and turn off <em>Activity information from ad partners</em>.</span></label>
+            <label class="check"><input type="checkbox" value="meta-offsite-clear"><span><strong>Your information and permissions &rarr; Your activity off Meta technologies &rarr; Clear previous activity.</strong> <small>Wipes the history of sites and apps that reported your visits and purchases to Meta.</small></span></label>
+            <p class="mt-1"><a href="https://accountscenter.facebook.com/info_and_permissions">Your information and permissions</a></p>
+          </li>
+          <li><label class="check"><input type="checkbox" value="meta-offsite-future"><span>Same page &rarr; <strong>Manage future activity &rarr; Disconnect future activity.</strong> <small>This is the important half: clearing alone lets it refill. You'll be logged out of apps where you used "Log in with Facebook", so switch those to email logins.</small></span></label></li>
+          <li>
+            <label class="check"><input type="checkbox" value="meta-partners"><span><strong>Ad preferences &rarr; Manage info &rarr; Activity information from ad partners</strong> &rarr; choose <em>No, don't make my ads more relevant by using this information</em>.</span></label>
             <p class="mt-1"><a href="https://accountscenter.facebook.com/ad_preferences">Meta ad preferences</a></p>
           </li>
+          <li><label class="check"><input type="checkbox" value="meta-categories"><span><strong>Ad preferences &rarr; Manage info &rarr; Categories used to reach you</strong>: turn off employer, job title, education and relationship status, and remove every entry under <em>Other categories</em>. <small>These are the inferred labels ("frequent traveler", "likely to move") that advertisers target.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-audience"><span><strong>Ad preferences &rarr; Manage info &rarr; Audience-based advertising</strong>: open each advertiser and remove yourself from their lists. <small>These businesses uploaded your email address or phone number. A long list here is a map of who sold or shared your contact details.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-offmeta"><span><strong>Ad preferences &rarr; Manage info &rarr; Ads shown outside of Meta</strong> &rarr; turn off. <small>Stops your profile following you into other apps through the Audience Network.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-social"><span><strong>Ad preferences &rarr; Manage info &rarr; Social interactions</strong> &rarr; <em>Only me</em>. <small>Stops your likes being shown to friends inside ads.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-contacts"><span><strong>Your information and permissions &rarr; Upload contacts</strong>: turn off continuous upload in each app and delete what's already uploaded. <small>Your address book feeds "People you may know" and lookalike matching.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-location"><span>In the Facebook app: <strong>Settings &amp; privacy &rarr; Settings &rarr; Location</strong> &rarr; turn off <em>Location history</em> and <em>Background location</em>. Then set the app's location permission to <em>Never</em> or <em>While using</em> in your phone's settings.</span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-eu"><span>In the EU, EEA, Switzerland or UK: <strong>Ad preferences &rarr; Ad personalization</strong> (or the consent prompt) &rarr; choose <em>less personalized ads</em>. <small>These use only what you're looking at right now, not your history. You can also object to Meta using your posts for AI training from the <a href="https://www.facebook.com/privacy/center/">Privacy Center</a>.</small></span></label></li>
+        </ul>
+        <h4 class="mt-2">Poison: scramble what's left</h4>
+        <p>Meta keeps some signal no matter what you switch off, so feed it bad signal. A profile that matches the wrong person is worth less to advertisers than an accurate one.</p>
+        <ul class="checklist" data-checklist="reset">
+          <li><label class="check"><input type="checkbox" value="meta-topics"><span><strong>Ad preferences &rarr; Ad topics</strong>: press <em>See less</em> on every topic that's actually you. <small>Leave the wrong guesses alone; they're free noise.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-hide"><span>On ads that match you, tap <strong>&middot;&middot;&middot; &rarr; Hide ad &rarr; It's not relevant to me</strong>. On ads that are way off, click through and scroll for a bit. <small>Engaging with the wrong ads trains the model toward the wrong person.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-decoy"><span>Pick a <strong>decoy persona</strong> (the <a href="../index.html#generator">chaff generator</a> has some) and spend a few minutes a week following, liking and searching for its interests on Facebook and Instagram. <small>Keep it consistent. Random likes are easy to filter out; a coherent fake hobby isn't.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-container"><span>Fence Meta off from the rest of your browsing: Firefox's <a href="https://addons.mozilla.org/firefox/addon/facebook-container/">Facebook Container</a>, a separate browser profile used only for Meta, or the apps only (never logged in on the web). <small>Then block the Meta Pixel everywhere else with the <a href="hosts.html">hosts builder</a> (the <em>Meta pixel</em> group).</small></span></label></li>
+        </ul>
+        <h4 class="mt-2">Nuke: start over</h4>
+        <ul class="checklist" data-checklist="reset">
+          <li><label class="check"><input type="checkbox" value="meta-download"><span>Before deleting anything, go to <strong>Your information and permissions &rarr; Download your information</strong>. <small>The ads and off-Meta activity folders in the archive show exactly who has been reporting on you.</small></span></label></li>
+          <li><label class="check"><input type="checkbox" value="meta-delete"><span>Optional: <strong>Personal details &rarr; Account ownership and control &rarr; Deactivation or deletion</strong>. <small>Deletion is final after 30 days. Advertisers' uploaded lists still exist, so do the <a href="brokers.html">data broker cleanup</a> too.</small></span></label></li>
+        </ul>
+
+        <h3 id="platforms" class="mt-2">Platforms &amp; the ad industry</h3>
+        <ul class="checklist" data-checklist="reset">
           <li>
             <label class="check"><input type="checkbox" value="amazon"><span><strong>Amazon</strong>: choose <em>Do not show me interest-based ads provided by Amazon</em>.</span></label>
             <p class="mt-1"><a href="https://www.amazon.com/adprefs">Amazon advertising preferences</a></p>
@@ -171,7 +207,9 @@
           </li>
         </ul>
 
-        <p class="callout mt-2"><strong>Why delete instead of reset?</strong> A reset gives you a fresh ID, and new tracking starts immediately. Deleting (Android 12+) or blocking tracking requests (iOS) hands apps a meaningless all-zero ID, so there's nothing new to profile. Further reading: <a href="https://pixeldefence.com/delete-google-advertising-id-guide/">Pixel Defence's guide</a> and <a href="https://nordvpn.com/blog/reset-advertising-id/">NordVPN's walkthrough</a>.</p>
+        <p class="callout mt-2"><strong>Next:</strong> your profile also lives with data brokers you never signed up with. <a href="brokers.html">Remove yourself from data brokers</a>, for free.</p>
+
+        <p class="callout mt-1"><strong>Why delete instead of reset?</strong> A reset gives you a fresh ID, and new tracking starts immediately. Deleting (Android 12+) or blocking tracking requests (iOS) hands apps a meaningless all-zero ID, so there's nothing new to profile. Further reading: <a href="https://pixeldefence.com/delete-google-advertising-id-guide/">Pixel Defence's guide</a> and <a href="https://nordvpn.com/blog/reset-advertising-id/">NordVPN's walkthrough</a>.</p>
       </div>
     </section>
   </main>
@@ -189,12 +227,14 @@
           <li><a href="hosts.html">Hosts file builder</a></li>
           <li><a href="dns.html">Private DNS picks</a></li>
           <li><a href="fingerprint.html">Fingerprint check</a></li>
+          <li><a href="brokers.html#letter">Deletion letter</a></li>
         </ul>
       </nav>
       <nav aria-label="Guides">
         <h2>Guides</h2>
         <ul>
           <li><a href="reset.html">Reset ad IDs</a></li>
+          <li><a href="brokers.html">Data brokers</a></li>
           <li><a href="hygiene.html">Browser hygiene</a></li>
           <li><a href="privacy.html">Privacy notice</a></li>
           <li><a href="https://github.com/CodePosse/AdPoison/" target="_blank" rel="noopener noreferrer">GitHub SRC</a></li>

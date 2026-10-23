@@ -731,6 +731,8 @@ td code { white-space: nowrap; }
 }
 
 /* ---------- Hard-link list ---------- */
+.bullets { padding-left: 1.2rem; display: grid; gap: 0.5rem; }
+.bullets li::marker { color: var(--pink); }
 .linklist { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
 .linklist a {
   display: flex;

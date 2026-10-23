@@ -16,7 +16,7 @@
   <meta property="og:title" content="Browser Privacy Hygiene | Ad Poison">
   <meta property="og:description" content="Settings, extensions and auto-clear policies that keep trackers from sticking.">
   <meta property="og:url" content="https://codeposse.github.io/AdPoison/html/hygiene.html">
-  <meta property="article:modified_time" content="2026-10-04">
+  <meta property="article:modified_time" content="2026-10-22">
   <meta property="og:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -54,7 +54,8 @@
           { "@type": "HowToStep", "position": 2, "name": "Flush DNS", "text": "Clear the operating system and browser DNS caches." },
           { "@type": "HowToStep", "position": 3, "name": "Review extensions", "text": "Remove extensions you no longer use and confirm your content blocker is enabled." },
           { "@type": "HowToStep", "position": 4, "name": "Redo cookie-based opt-outs", "text": "Re-run industry opt-out pages that depend on cookies." },
-          { "@type": "HowToStep", "position": 5, "name": "Run a chaff session", "text": "Run a 30-minute chaff generator session to add noise to your ad profile." }
+          { "@type": "HowToStep", "position": 5, "name": "Run a chaff session", "text": "Run a 30-minute chaff generator session to add noise to your ad profile." },
+          { "@type": "HowToStep", "position": 6, "name": "Use throwaway sessions", "text": "Do shopping, sensitive searches and untrusted links in a disposable session: a temporary container, a separate profile, Tor or Mullvad Browser, Windows Sandbox or a remote browser.", "url": "https://codeposse.github.io/AdPoison/html/hygiene.html#disposable" }
         ]
       }
     ]
@@ -92,7 +93,7 @@
           <span class="eyebrow">Step 03 &middot; Reset</span>
           <h1 id="page-title">Browser hygiene</h1>
           <p class="lede">Trackers are sticky. A few one-time settings, a blocker, and a ten-minute weekly scrub keep new profiles from forming.</p>
-          <p class="updated">Updated <time datetime="2026-10-04">October 4, 2026</time></p>
+          <p class="updated">Updated <time datetime="2026-10-22">October 22, 2026</time></p>
         </div>
         <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
       </div>
@@ -261,7 +262,69 @@
         <p class="callout callout--warn"><strong>Heads up:</strong> Chrome only honors clear-on-exit when sync is disabled, which is why <code>SyncDisabled</code> is included. Your bookmarks stay on this computer but stop syncing. Delete the keys in <code>regedit</code> to undo.</p>
 
         <h3>Separate profiles</h3>
-        <p>The simplest trick of all: keep one browser profile (or a whole browser) <em>only</em> for logged-in Google, Meta and Amazon, and do everything else in another. Trackers can't link what they can't see together.</p>
+        <p>The simplest trick of all: keep one browser profile (or a whole browser) <em>only</em> for logged-in Google, Meta and Amazon, and do everything else in another. Trackers can't link what they can't see together. For one-off sessions, see <a href="#disposable">throwaway sessions</a> below.</p>
+      </div>
+    </section>
+
+    <!-- ============ DISPOSABLE SESSIONS ============ -->
+    <section class="section" id="disposable" aria-labelledby="disposable-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="disposable-title">Throwaway sessions</h2>
+          <p>A disposable session starts with no cookies, no logins and no history, and everything is wiped when you close it. Whatever you do in it can't be stitched onto your main ad profile through cookies. It's the idea behind "disposable browser" products, and you can get most of it for free on your own machine.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">+</div>
+            <h3>Pros</h3>
+            <ul class="bullets">
+              <li><strong>Nothing carries over:</strong> cookies, site storage, cache and logins are gone when you close it.</li>
+              <li><strong>Kills retargeting:</strong> browse shoes, a diagnosis or a gift without it following you around for weeks.</li>
+              <li><strong>Keeps big platforms apart:</strong> a site you visit in a throwaway session can't tell Meta or Google it was you through their cookies.</li>
+              <li><strong>Safer for sketchy links:</strong> a <em>remote</em> session or a sandbox keeps a bad page or download away from your real system.</li>
+              <li><strong>Free and quick:</strong> the local options are built in or one click away.</li>
+            </ul>
+          </article>
+          <article class="card pixel-box">
+            <div class="card__icon" aria-hidden="true">&minus;</div>
+            <h3>Cons</h3>
+            <ul class="bullets">
+              <li><strong>Fingerprint and IP stay the same:</strong> a fresh session still looks like your device unless you also <a href="fingerprint.html">blur your fingerprint</a> and use a VPN or Tor.</li>
+              <li><strong>Logging in undoes it:</strong> sign in to Google or Meta and the session is tied to you again.</li>
+              <li><strong>Leaks at the edges:</strong> downloads, bookmarks and some extensions survive. Private windows also share one session until you close <em>every</em> private window.</li>
+              <li><strong>Remote browsers move the trust:</strong> a cloud browser sees everything you type, is slower, and sites often throw CAPTCHAs at data-center IPs.</li>
+              <li><strong>Doesn't fix the past:</strong> it stops new data, but the existing profile needs a <a href="reset.html">reset</a>, <a href="brokers.html">broker removal</a> and some <a href="../index.html#generator">poison</a>.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="table-wrap mt-2">
+          <table>
+            <caption>Disposable session options</caption>
+            <thead>
+              <tr><th scope="col">Option</th><th scope="col">Runs on</th><th scope="col">Price</th><th scope="col">What's thrown away</th><th scope="col">Good to know</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Private / Incognito window</th><td>Your device</td><td><span class="pill">Free</span></td><td>Cookies, storage and history, when the last private window closes</td><td>Built into every browser. Fine for a quick look; doesn't hide your IP or fingerprint.</td></tr>
+              <tr><th scope="row"><a href="https://addons.mozilla.org/firefox/addon/multi-account-containers/">Firefox Multi-Account Containers</a></th><td>Your device</td><td><span class="pill">Free</span></td><td>Nothing by default; each container keeps its own separate cookie jar</td><td>Not disposable, but walls sites off from each other in one window. <a href="https://addons.mozilla.org/firefox/addon/facebook-container/">Facebook Container</a> does this automatically for Meta.</td></tr>
+              <tr><th scope="row"><a href="https://addons.mozilla.org/firefox/addon/temporary-containers/">Temporary Containers</a></th><td>Your device</td><td><span class="pill">Free</span></td><td>A fresh container per tab or site, deleted when closed</td><td>The closest thing to a free disposable browser. Not updated since 2021; it still works, but keep an eye on it.</td></tr>
+              <tr><th scope="row">Separate browser profile</th><td>Your device</td><td><span class="pill">Free</span></td><td>Nothing; it's a permanent second identity</td><td>Strongest everyday split: own cookies, extensions and logins. Pair it with clear-on-exit (above) to make it throwaway.</td></tr>
+              <tr><th scope="row"><a href="https://brave.com/">Brave</a> private window with Tor</th><td>Your device + Tor network</td><td><span class="pill">Free</span></td><td>Everything on close; also hides your IP</td><td>One click from Brave's menu. Slower, and some sites block Tor.</td></tr>
+              <tr><th scope="row"><a href="https://mullvad.net/browser">Mullvad Browser</a> / <a href="https://www.torproject.org/">Tor Browser</a></th><td>Your device</td><td><span class="pill">Free</span></td><td>Everything, every time you quit</td><td>Always-private by design, plus a shared fingerprint so you blend in. Tor also hides your IP.</td></tr>
+              <tr><th scope="row"><a href="https://learn.microsoft.com/windows/security/application-security/application-isolation/windows-sandbox/">Windows Sandbox</a></th><td>A throwaway Windows on your PC</td><td><span class="pill">Free</span> Pro / Enterprise</td><td>The whole desktop, including downloads, when you close it</td><td>Good for opening suspicious files and links. Turn it on under <em>Optional features</em>. Same IP as your PC.</td></tr>
+              <tr><th scope="row">Remote / cloud browsers (e.g. <a href="https://www.browserling.com/">Browserling</a>)</th><td>Someone else's server</td><td><span class="pill">Free tier</span> <span class="pill pill--paid">Paid</span></td><td>Everything; nothing touches your device</td><td>Best for links you don't trust. Never log in to anything real there. Some well-known names, like SquareX, now sell mainly to businesses.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="mt-2">Which one, when</h3>
+        <ul class="bullets">
+          <li><strong>Shopping or price research:</strong> a container or a second profile, never your logged-in one.</li>
+          <li><strong>Health, money or legal searches:</strong> Mullvad Browser or Tor Browser.</li>
+          <li><strong>A link or file you don't trust:</strong> a remote browser or Windows Sandbox.</li>
+          <li><strong>Google, Meta and Amazon:</strong> their own profile or container, always logged in there and nowhere else.</li>
+        </ul>
       </div>
     </section>
   </main>

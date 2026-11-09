@@ -63,6 +63,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#letter">Skip to deletion letter</a>
 
   <header class="site-header">
     <div class="wrap">
@@ -82,7 +83,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
         <div>
@@ -137,39 +138,39 @@
         <p>Removal is pointless if every new account hands out your real email and phone again. A different alias per site also tells you exactly who leaked or sold you. This is the Cloaked part, free.</p>
         <ul class="checklist" data-checklist="brokers">
           <li>
-            <label class="check"><input type="checkbox" value="mask-email"><span>Set up a free <strong>email alias</strong> service and use a new alias for every shop, newsletter and app. <small>All forward to your real inbox and can be switched off one at a time.</small></span></label>
+            <label class="check" for="check-mask-email"><input type="checkbox" value="mask-email" id="check-mask-email" aria-labelledby="check-mask-email-text"><span id="check-mask-email-text">Set up a free <strong>email alias</strong> service and use a new alias for every shop, newsletter and app. <small>All forward to your real inbox and can be switched off one at a time.</small></span></label>
             <p class="mt-1"><a href="https://duckduckgo.com/email/">DuckDuckGo Email Protection</a> (unlimited, free) &middot; <a href="https://relay.firefox.com/">Firefox Relay</a> (free tier) &middot; <a href="https://simplelogin.io/">SimpleLogin</a> (free tier) &middot; <a href="https://addy.io/">addy.io</a> (free tier, open source)</p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="mask-phone"><span>Get a free <strong>second phone number</strong> for loyalty cards, deliveries and sign-ups. <small>Your real number is the most-traded identifier after your email.</small></span></label>
+            <label class="check" for="check-mask-phone"><input type="checkbox" value="mask-phone" id="check-mask-phone" aria-labelledby="check-mask-phone-text"><span id="check-mask-phone-text">Get a free <strong>second phone number</strong> for loyalty cards, deliveries and sign-ups. <small>Your real number is the most-traded identifier after your email.</small></span></label>
             <p class="mt-1"><a href="https://voice.google.com/">Google Voice</a> (US, free)</p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="mask-card"><span>Use <strong>virtual card numbers</strong> online. <small>Merchant-locked cards stop purchase data being tied together. Many banks offer them; <a href="https://www.privacy.com/">Privacy.com</a> has a free plan in the US. Apple Pay and Google Pay also hide your real card number.</small></span></label>
+            <label class="check" for="check-mask-card"><input type="checkbox" value="mask-card" id="check-mask-card" aria-labelledby="check-mask-card-text"><span id="check-mask-card-text">Use <strong>virtual card numbers</strong> online. <small>Merchant-locked cards stop purchase data being tied together. Many banks offer them; <a href="https://www.privacy.com/">Privacy.com</a> has a free plan in the US. Apple Pay and Google Pay also hide your real card number.</small></span></label>
           </li>
-          <li><label class="check"><input type="checkbox" value="mask-loyalty"><span>Give loyalty programs an alias, a virtual number and no birthday. <small>Store loyalty data is one of the main feeds into Meta and Google "customer list" ads.</small></span></label></li>
+          <li><label class="check" for="check-mask-loyalty"><input type="checkbox" value="mask-loyalty" id="check-mask-loyalty" aria-labelledby="check-mask-loyalty-text"><span id="check-mask-loyalty-text">Give loyalty programs an alias, a virtual number and no birthday. <small>Store loyalty data is one of the main feeds into Meta and Google "customer list" ads.</small></span></label></li>
         </ul>
 
         <h3 id="free-tools">2. One-shot free tools</h3>
         <ul class="checklist" data-checklist="brokers">
           <li>
-            <label class="check"><input type="checkbox" value="drop"><span><strong>California residents: submit a DROP request.</strong> <small>One free, state-run request reaches 600+ registered data brokers. Brokers have had to process it since August 1, 2026, and must re-check every 45 days, so it keeps working.</small></span></label>
+            <label class="check" for="check-drop"><input type="checkbox" value="drop" id="check-drop" aria-labelledby="check-drop-text"><span id="check-drop-text"><strong>California residents: submit a DROP request.</strong> <small>One free, state-run request reaches 600+ registered data brokers. Brokers have had to process it since August 1, 2026, and must re-check every 45 days, so it keeps working.</small></span></label>
             <p class="mt-1"><a class="btn btn--sm btn--teal" href="https://privacy.ca.gov/drop/">Open DROP</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="google-results"><span><strong>Google Results about you</strong>: get alerts when your phone, email or home address shows up in Search, and request removal in one tap. <small>Removes it from Google, not from the source site, but that's where most people find you.</small></span></label>
+            <label class="check" for="check-google-results"><input type="checkbox" value="google-results" id="check-google-results" aria-labelledby="check-google-results-text"><span id="check-google-results-text"><strong>Google Results about you</strong>: get alerts when your phone, email or home address shows up in Search, and request removal in one tap. <small>Removes it from Google, not from the source site, but that's where most people find you.</small></span></label>
             <p class="mt-1"><a href="https://myactivity.google.com/results-about-you">Results about you</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="permission-slip"><span><strong>Permission Slip</strong> app: pick companies and it sends do-not-sell and delete requests for you, free. <small>Originally built by Consumer Reports, now run by DeleteMe.</small></span></label>
+            <label class="check" for="check-permission-slip"><input type="checkbox" value="permission-slip" id="check-permission-slip" aria-labelledby="check-permission-slip-text"><span id="check-permission-slip-text"><strong>Permission Slip</strong> app: pick companies and it sends do-not-sell and delete requests for you, free. <small>Originally built by Consumer Reports, now run by DeleteMe.</small></span></label>
             <p class="mt-1"><a href="https://permissionslipcr.com/">Permission Slip</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="prescreen"><span>US: opt out of <strong>pre-screened credit and insurance offers</strong>. <small>The credit bureaus sell your file to lenders for junk-mail offers. Five years online, or permanent by mail.</small></span></label>
+            <label class="check" for="check-prescreen"><input type="checkbox" value="prescreen" id="check-prescreen" aria-labelledby="check-prescreen-text"><span id="check-prescreen-text">US: opt out of <strong>pre-screened credit and insurance offers</strong>. <small>The credit bureaus sell your file to lenders for junk-mail offers. Five years online, or permanent by mail.</small></span></label>
             <p class="mt-1"><a href="https://www.optoutprescreen.com/">OptOutPrescreen.com</a> &middot; <a href="https://www.donotcall.gov/">Do Not Call Registry</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="optery-scan"><span>Run a <strong>free exposure scan</strong> to see where you're listed. <small>Use an alias email to sign up. You don't need the paid plan: the scan tells you which forms below to bother with.</small></span></label>
+            <label class="check" for="check-optery-scan"><input type="checkbox" value="optery-scan" id="check-optery-scan" aria-labelledby="check-optery-scan-text"><span id="check-optery-scan-text">Run a <strong>free exposure scan</strong> to see where you're listed. <small>Use an alias email to sign up. You don't need the paid plan: the scan tells you which forms below to bother with.</small></span></label>
             <p class="mt-1"><a href="https://www.optery.com/">Optery free scan</a></p>
           </li>
         </ul>
@@ -178,35 +179,35 @@
         <p>Search each site for yourself first and copy your listing's URL; most forms ask for it. Use an alias email for the confirmation link. Never upload ID unless the law in your area requires it for that request.</p>
         <ul class="checklist" data-checklist="brokers">
           <li>
-            <label class="check"><input type="checkbox" value="peopleconnect"><span><strong>PeopleConnect</strong>: one form covers Intelius, TruthFinder, Instant Checkmate, US Search and ZabaSearch. <small>Best value per click on this list.</small></span></label>
+            <label class="check" for="check-peopleconnect"><input type="checkbox" value="peopleconnect" id="check-peopleconnect" aria-labelledby="check-peopleconnect-text"><span id="check-peopleconnect-text"><strong>PeopleConnect</strong>: one form covers Intelius, TruthFinder, Instant Checkmate, US Search and ZabaSearch. <small>Best value per click on this list.</small></span></label>
             <p class="mt-1"><a href="https://suppression.peopleconnect.us/login">PeopleConnect suppression</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="spokeo"><span><strong>Spokeo</strong>: paste your listing URL and confirm by email.</span></label>
+            <label class="check" for="check-spokeo"><input type="checkbox" value="spokeo" id="check-spokeo" aria-labelledby="check-spokeo-text"><span id="check-spokeo-text"><strong>Spokeo</strong>: paste your listing URL and confirm by email.</span></label>
             <p class="mt-1"><a href="https://www.spokeo.com/optout">Spokeo opt-out</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="whitepages"><span><strong>Whitepages</strong>: paste your listing URL; it verifies with an automated phone call.</span></label>
+            <label class="check" for="check-whitepages"><input type="checkbox" value="whitepages" id="check-whitepages" aria-labelledby="check-whitepages-text"><span id="check-whitepages-text"><strong>Whitepages</strong>: paste your listing URL; it verifies with an automated phone call.</span></label>
             <p class="mt-1"><a href="https://www.whitepages.com/suppression-requests">Whitepages suppression</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="beenverified"><span><strong>BeenVerified</strong>: search, select your record, confirm by email. <small>The same company runs PeopleLooker and NeighborWho; repeat there if you're listed.</small></span></label>
+            <label class="check" for="check-beenverified"><input type="checkbox" value="beenverified" id="check-beenverified" aria-labelledby="check-beenverified-text"><span id="check-beenverified-text"><strong>BeenVerified</strong>: search, select your record, confirm by email. <small>The same company runs PeopleLooker and NeighborWho; repeat there if you're listed.</small></span></label>
             <p class="mt-1"><a href="https://www.beenverified.com/app/optout/search">BeenVerified opt-out</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="radaris"><span><strong>Radaris</strong>: find your profile and use the privacy control page.</span></label>
+            <label class="check" for="check-radaris"><input type="checkbox" value="radaris" id="check-radaris" aria-labelledby="check-radaris-text"><span id="check-radaris-text"><strong>Radaris</strong>: find your profile and use the privacy control page.</span></label>
             <p class="mt-1"><a href="https://radaris.com/control/privacy">Radaris privacy</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="peoplefinders"><span><strong>PeopleFinders</strong>.</span></label>
+            <label class="check" for="check-peoplefinders"><input type="checkbox" value="peoplefinders" id="check-peoplefinders" aria-labelledby="check-peoplefinders-text"><span id="check-peoplefinders-text"><strong>PeopleFinders</strong>.</span></label>
             <p class="mt-1"><a href="https://www.peoplefinders.com/opt-out">PeopleFinders opt-out</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="fastpeople"><span><strong>FastPeopleSearch</strong> and <strong>TruePeopleSearch</strong>: free sites with no account, high in search results.</span></label>
+            <label class="check" for="check-fastpeople"><input type="checkbox" value="fastpeople" id="check-fastpeople" aria-labelledby="check-fastpeople-text"><span id="check-fastpeople-text"><strong>FastPeopleSearch</strong> and <strong>TruePeopleSearch</strong>: free sites with no account, high in search results.</span></label>
             <p class="mt-1"><a href="https://www.fastpeoplesearch.com/removal">FastPeopleSearch removal</a> &middot; <a href="https://www.truepeoplesearch.com/removal">TruePeopleSearch removal</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="small-sites"><span>The rest of the usual suspects.</span></label>
+            <label class="check" for="check-small-sites"><input type="checkbox" value="small-sites" id="check-small-sites" aria-labelledby="check-small-sites-text"><span id="check-small-sites-text">The rest of the usual suspects.</span></label>
             <p class="mt-1"><a href="https://www.usphonebook.com/removal">USPhoneBook</a> &middot; <a href="https://nuwber.com/removal/link">Nuwber</a> &middot; <a href="https://thatsthem.com/optout">That's Them</a> &middot; <a href="https://www.peekyou.com/about/contact/optout/">PeekYou</a></p>
           </li>
         </ul>
@@ -215,25 +216,25 @@
         <p>You'll never see these companies' websites, but they supply the audience segments behind most targeted ads.</p>
         <ul class="checklist" data-checklist="brokers">
           <li>
-            <label class="check"><input type="checkbox" value="acxiom"><span><strong>Acxiom</strong>: one of the largest marketing data sellers.</span></label>
+            <label class="check" for="check-acxiom"><input type="checkbox" value="acxiom" id="check-acxiom" aria-labelledby="check-acxiom-text"><span id="check-acxiom-text"><strong>Acxiom</strong>: one of the largest marketing data sellers.</span></label>
             <p class="mt-1"><a href="https://isapps.acxiom.com/optout/optout.aspx">Acxiom opt-out</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="lexisnexis"><span><strong>LexisNexis Risk Solutions</strong>: request removal from their consumer databases.</span></label>
+            <label class="check" for="check-lexisnexis"><input type="checkbox" value="lexisnexis" id="check-lexisnexis" aria-labelledby="check-lexisnexis-text"><span id="check-lexisnexis-text"><strong>LexisNexis Risk Solutions</strong>: request removal from their consumer databases.</span></label>
             <p class="mt-1"><a href="https://optout.lexisnexis.com/">LexisNexis opt-out</a></p>
           </li>
-          <li><label class="check"><input type="checkbox" value="letters-sent"><span>Email a <a href="#letter">deletion letter</a> to any broker that has no opt-out form, and to companies on your Meta <a href="reset.html#meta">Audience-based advertising</a> list. <small>In the US, registered brokers are listed with contact details on state registries such as <a href="https://cppa.ca.gov/data_brokers/">California's</a>.</small></span></label></li>
+          <li><label class="check" for="check-letters-sent"><input type="checkbox" value="letters-sent" id="check-letters-sent" aria-labelledby="check-letters-sent-text"><span id="check-letters-sent-text">Email a <a href="#letter">deletion letter</a> to any broker that has no opt-out form, and to companies on your Meta <a href="reset.html#meta">Audience-based advertising</a> list. <small>In the US, registered brokers are listed with contact details on state registries such as <a href="https://cppa.ca.gov/data_brokers/">California's</a>.</small></span></label></li>
         </ul>
 
         <h3 id="repeat">5. Repeat</h3>
         <ul class="checklist" data-checklist="brokers">
-          <li><label class="check"><input type="checkbox" value="calendar"><span>Put a reminder in your calendar to <strong>search your name again in 3 months</strong>. <small>Brokers re-buy data and relist people. This is the only real advantage of a paid service: it does the re-checks for you.</small></span></label></li>
+          <li><label class="check" for="check-calendar"><input type="checkbox" value="calendar" id="check-calendar" aria-labelledby="check-calendar-text"><span id="check-calendar-text">Put a reminder in your calendar to <strong>search your name again in 3 months</strong>. <small>Brokers re-buy data and relist people. This is the only real advantage of a paid service: it does the re-checks for you.</small></span></label></li>
         </ul>
       </div>
     </section>
 
     <!-- ============ LETTER GENERATOR ============ -->
-    <section class="section" id="letter" aria-labelledby="letter-title">
+    <section class="section" id="letter" tabindex="-1" aria-labelledby="letter-title">
       <div class="wrap">
         <div class="section__head">
           <h2 id="letter-title">Deletion request letter generator</h2>
@@ -288,10 +289,10 @@
 
             <fieldset class="mt-2">
               <legend>Ask them to</legend>
-              <label class="check"><input type="checkbox" id="ask-delete" checked><span>Delete my data</span></label>
-              <label class="check"><input type="checkbox" id="ask-sell" checked><span>Stop selling or sharing it, and stop targeted ads</span></label>
-              <label class="check"><input type="checkbox" id="ask-partners" checked><span>Tell everyone they sold it to</span></label>
-              <label class="check"><input type="checkbox" id="ask-source"><span>Tell me where they got it <small>Makes the letter an access request too, which can slow the reply.</small></span></label>
+              <label class="check" for="ask-delete"><input type="checkbox" id="ask-delete" checked aria-labelledby="ask-delete-text"><span id="ask-delete-text">Delete my data</span></label>
+              <label class="check" for="ask-sell"><input type="checkbox" id="ask-sell" checked aria-labelledby="ask-sell-text"><span id="ask-sell-text">Stop selling or sharing it, and stop targeted ads</span></label>
+              <label class="check" for="ask-partners"><input type="checkbox" id="ask-partners" checked aria-labelledby="ask-partners-text"><span id="ask-partners-text">Tell everyone they sold it to</span></label>
+              <label class="check" for="ask-source"><input type="checkbox" id="ask-source" aria-labelledby="ask-source-text"><span id="ask-source-text">Tell me where they got it <small>Makes the letter an access request too, which can slow the reply.</small></span></label>
             </fieldset>
           </div>
 

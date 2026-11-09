@@ -16,7 +16,7 @@
   <meta property="og:title" content="Browser Privacy Hygiene | Ad Poison">
   <meta property="og:description" content="Settings, extensions and auto-clear policies that keep trackers from sticking.">
   <meta property="og:url" content="https://codeposse.github.io/AdPoison/html/hygiene.html">
-  <meta property="article:modified_time" content="2026-10-22">
+  <meta property="article:modified_time" content="2026-11-08">
   <meta property="og:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -83,7 +83,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
         <div>
@@ -93,7 +93,7 @@
           <span class="eyebrow">Step 03 &middot; Reset</span>
           <h1 id="page-title">Browser hygiene</h1>
           <p class="lede">Trackers are sticky. A few one-time settings, a blocker, and a ten-minute weekly scrub keep new profiles from forming.</p>
-          <p class="updated">Updated <time datetime="2026-10-22">October 22, 2026</time></p>
+          <p class="updated">Updated <time datetime="2026-11-08">November 8, 2026</time></p>
         </div>
         <img src="../assets/img/skull-flap.svg" alt="" width="144" height="80">
       </div>
@@ -110,12 +110,12 @@
           <button type="button" class="btn btn--sm btn--ghost" data-checklist-reset="weekly">Start a new week</button>
         </div>
         <ul class="checklist" data-checklist="weekly">
-          <li><label class="check"><input type="checkbox" value="cookies"><span><strong>Clear cookies &amp; site data</strong> (time range: <em>All time</em>). <small>Shortcut in Chrome, Edge and Firefox: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Delete</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>Delete</kbd> on Mac).</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="dns"><span><strong>Flush DNS</strong> on your computer and in the browser. <small><a href="hosts.html#flush-title">Commands here</a>.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="extensions"><span><strong>Audit extensions.</strong> Remove anything you don't use: extensions are a common tracking and malware vector.</span></label></li>
-          <li><label class="check"><input type="checkbox" value="optouts"><span><strong>Redo cookie-based opt-outs</strong> (clearing cookies erases them). <small><a href="https://optout.aboutads.info/">DAA</a> &middot; <a href="https://optout.networkadvertising.org/">NAI</a></small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="activity"><span><strong>Skim your Google activity</strong> and delete anything you don't want feeding ads. <small><a href="https://myactivity.google.com/">My Activity</a></small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="chaff"><span><strong>Run a 30-minute chaff session</strong> with a new persona. <small><a href="../index.html#generator">Open the generator</a></small></span></label></li>
+          <li><label class="check" for="check-cookies"><input type="checkbox" value="cookies" id="check-cookies" aria-labelledby="check-cookies-text"><span id="check-cookies-text"><strong>Clear cookies &amp; site data</strong> (time range: <em>All time</em>). <small>Shortcut in Chrome, Edge and Firefox: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Delete</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>Delete</kbd> on Mac).</small></span></label></li>
+          <li><label class="check" for="check-dns"><input type="checkbox" value="dns" id="check-dns" aria-labelledby="check-dns-text"><span id="check-dns-text"><strong>Flush DNS</strong> on your computer and in the browser. <small><a href="hosts.html#flush-title">Commands here</a>.</small></span></label></li>
+          <li><label class="check" for="check-extensions"><input type="checkbox" value="extensions" id="check-extensions" aria-labelledby="check-extensions-text"><span id="check-extensions-text"><strong>Audit extensions.</strong> Remove anything you don't use: extensions are a common tracking and malware vector.</span></label></li>
+          <li><label class="check" for="check-optouts"><input type="checkbox" value="optouts" id="check-optouts" aria-labelledby="check-optouts-text"><span id="check-optouts-text"><strong>Redo cookie-based opt-outs</strong> (clearing cookies erases them). <small><a href="https://optout.aboutads.info/">DAA</a> &middot; <a href="https://optout.networkadvertising.org/">NAI</a></small></span></label></li>
+          <li><label class="check" for="check-activity"><input type="checkbox" value="activity" id="check-activity" aria-labelledby="check-activity-text"><span id="check-activity-text"><strong>Skim your Google activity</strong> and delete anything you don't want feeding ads. <small><a href="https://myactivity.google.com/">My Activity</a></small></span></label></li>
+          <li><label class="check" for="check-chaff"><input type="checkbox" value="chaff" id="check-chaff" aria-labelledby="check-chaff-text"><span id="check-chaff-text"><strong>Run a 30-minute chaff session</strong> with a new persona. <small><a href="../index.html#generator">Open the generator</a></small></span></label></li>
         </ul>
       </div>
     </section>
@@ -190,7 +190,7 @@
       <div class="wrap">
         <div class="section__head">
           <h2 id="ext-title">Extensions worth installing</h2>
-          <p>Fewer is better. One blocker plus, optionally, one obfuscator. Anti-fingerprinting picks are on the <a href="fingerprint.html">fingerprint page</a>.</p>
+          <p>Fewer is better. One blocker plus, optionally, one obfuscator. Anti-fingerprinting picks are on the <a href="fingerprint.html">fingerprint page</a>, and phone and desktop noise tools are under <a href="../index.html#more-noise">more noise tools</a>.</p>
         </div>
         <div class="grid">
           <article class="card pixel-box">
@@ -205,12 +205,12 @@
           </article>
           <article class="card pixel-box">
             <h3>AdNauseam</h3>
-            <p>Blocks ads <em>and</em> silently registers clicks on them, poisoning your profile and the ad network's data. Firefox recommended.</p>
-            <a class="btn btn--sm btn--pink" href="https://adnauseam.io/">adnauseam.io</a>
+            <p>Blocks ads <em>and</em> silently registers clicks on them, poisoning your profile and the ad network's data. It replaces your blocker rather than adding to it. Clicking can be reduced or turned off in settings. Firefox recommended.</p>
+            <a class="btn btn--sm btn--pink" href="https://addons.mozilla.org/en-US/firefox/addon/adnauseam/">Firefox add-on</a>
           </article>
           <article class="card pixel-box">
             <h3>TrackMeNot</h3>
-            <p>An academic obfuscation project that sends decoy searches in the background, the same idea as our generator.</p>
+            <p>An academic obfuscation project that sends decoy searches in the background, the same idea as our generator. It reportedly hasn't been updated since 2019.</p>
             <a class="btn btn--sm btn--pink" href="https://trackmenot.io/">trackmenot.io</a>
           </article>
         </div>
@@ -225,7 +225,7 @@
 
         <h3>Firefox: <code>policies.json</code></h3>
         <p>Create a <code>distribution</code> folder in the Firefox install directory and save this as <code>policies.json</code>. Restart Firefox and check <code>about:policies</code>.</p>
-        <div class="code"><span class="code__label">policies.json</span><pre id="ff-policy"><code>{
+        <div class="code"><span class="code__label">policies.json</span><pre tabindex="0" id="ff-policy"><code>{
   "policies": {
     "SanitizeOnShutdown": {
       "Cookies": true,
@@ -250,7 +250,7 @@
 
         <h3>Chrome on Windows: registry policy</h3>
         <p>Save as <code>adpoison-chrome.reg</code> and double-click to import. Chrome then wipes cookies and cache on exit. Check <code>chrome://policy</code>.</p>
-        <div class="code"><span class="code__label">adpoison-chrome.reg</span><pre id="chrome-reg"><code>Windows Registry Editor Version 5.00
+        <div class="code"><span class="code__label">adpoison-chrome.reg</span><pre tabindex="0" id="chrome-reg"><code>Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Policies\Google\Chrome]
 "BlockThirdPartyCookies"=dword:00000001

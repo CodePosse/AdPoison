@@ -27,7 +27,11 @@
     input.name = 'group';
     input.value = g.id;
     input.checked = saved ? saved.indexOf(g.id) >= 0 : g.on;
+    input.id = 'group-' + g.id;
+    label.htmlFor = input.id;
     var span = document.createElement('span');
+    span.id = input.id + '-text';
+    input.setAttribute('aria-labelledby', span.id);
     span.appendChild(document.createTextNode(g.name + ' (' + g.hosts.length + ')'));
     if (g.breaks) {
       var tag = document.createElement('span');

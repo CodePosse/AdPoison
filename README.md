@@ -25,6 +25,7 @@
 | Move | Page | What you get |
 | --- | --- | --- |
 | **Noise** | `index.html#generator` | A chaff generator that browses as a fake persona (or pure chaos) at jittered intervals. |
+| **Noise** | `index.html#more-noise` | Independent tools for noise beyond the tab, each with its trade-offs: AdNauseam, Fauxx (Android), Fauxx Desktop, TrackMeNot and ISP Data Pollution. |
 | **Block** | `html/hosts.html` | A hosts-file builder (copy or download), one-line install commands per OS, flush DNS commands, links to maintained lists for Pi-hole. |
 | **Block** | `html/dns.html` | Free and paid private DNS comparison (AdGuard, Mullvad, Control D, NextDNS, Quad9, Pi-hole...) with setup steps per device. |
 | **Reset** | `html/reset.html` | A saved checklist to delete advertising IDs and turn off personalization at Google (including the [My Ad Center hard link](https://myadcenter.google.com/personalizationoff?n=true)), Amazon, Microsoft and more, plus a full Meta section: reset (clear and disconnect off-Meta activity, ad partners, audience lists), poison (decoy interests, hide-ad training) and nuke. |
@@ -136,7 +137,7 @@ This rewrites canonical URLs, Open Graph and Twitter tags, JSON-LD, the 404 page
 - JSON-LD: `WebSite`, `WebApplication`, `FAQPage`, `HowTo`, `ItemList`, `BreadcrumbList`
 - `sitemap.xml`, `robots.txt`, web app manifest, SVG and PNG icons
 - Web Share API with a copy-link fallback
-- WCAG: skip link, landmarks, labelled controls, visible focus, `aria-live` status updates, AA-contrast palette, 48px touch targets, `prefers-reduced-motion` support, `noscript` fallbacks, print stylesheet
+- WCAG: skip links (content, plus the main tool on tool pages), landmarks, controls with explicit `for`/`id` labels and `aria-labelledby`, keyboard-scrollable code blocks, visible focus, `aria-live` status updates, AA-contrast palette, 48px touch targets, `prefers-reduced-motion` support, `noscript` fallbacks, print stylesheet
 
 ## Customise
 
@@ -147,13 +148,13 @@ This rewrites canonical URLs, Open Graph and Twitter tags, JSON-LD, the 404 page
 
 ## Credits and inspiration
 
-[Chaff](https://github.com/immutabledev/chaff) · [TrackMeNot](https://trackmenot.io/) · [AdNauseam](https://adnauseam.io/) · [StevenBlack/hosts](https://github.com/StevenBlack/hosts) · [AmIUnique](https://amiunique.org/) · [EFF Cover Your Tracks](https://coveryourtracks.eff.org/)
+[Chaff](https://github.com/immutabledev/chaff) · [TrackMeNot](https://trackmenot.io/) · [AdNauseam](https://adnauseam.io/) · [Fauxx](https://github.com/digital-grease/fauxx) · [StevenBlack/hosts](https://github.com/StevenBlack/hosts) · [AmIUnique](https://amiunique.org/) · [EFF Cover Your Tracks](https://coveryourtracks.eff.org/)
 
 Fonts: [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) and [VT323](https://fonts.google.com/specimen/VT323), both under the SIL Open Font License.
 
 ## Disclaimer
 
-For information only, not legal advice. Ad Poison doesn't click ads or touch anyone else's accounts. Use it on your own devices and accounts. Not affiliated with any company mentioned.
+For information only, not legal advice. Ad Poison doesn't click ads or touch anyone else's accounts (AdNauseam, a separate project the site lists, does click ads). Use it on your own devices and accounts. Not affiliated with any company mentioned.
 
 ## License
 

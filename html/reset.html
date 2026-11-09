@@ -84,7 +84,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
         <div>
@@ -112,36 +112,36 @@
         <h3 id="google">Google</h3>
         <ul class="checklist" data-checklist="reset">
           <li>
-            <label class="check"><input type="checkbox" value="google-ads"><span>Turn <strong>personalized ads off</strong> in My Ad Center. <small>The single most effective click on this page.</small></span></label>
+            <label class="check" for="check-google-ads"><input type="checkbox" value="google-ads" id="check-google-ads" aria-labelledby="check-google-ads-text"><span id="check-google-ads-text">Turn <strong>personalized ads off</strong> in My Ad Center. <small>The single most effective click on this page.</small></span></label>
             <p class="mt-1"><a class="btn btn--sm btn--teal" href="https://myadcenter.google.com/personalizationoff?n=true">Turn off now</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="google-activity"><span>Pause or auto-delete <strong>Web &amp; App Activity</strong> and <strong>YouTube History</strong>. <small>Set auto-delete to 3 months if you don't want to pause entirely.</small></span></label>
+            <label class="check" for="check-google-activity"><input type="checkbox" value="google-activity" id="check-google-activity" aria-labelledby="check-google-activity-text"><span id="check-google-activity-text">Pause or auto-delete <strong>Web &amp; App Activity</strong> and <strong>YouTube History</strong>. <small>Set auto-delete to 3 months if you don't want to pause entirely.</small></span></label>
             <p class="mt-1"><a href="https://myactivity.google.com/activitycontrols">Activity controls</a> &middot; <a href="https://myactivity.google.com/">My Activity</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="chrome-adprivacy"><span>In Chrome, open <code>chrome://settings/adPrivacy</code> and switch off <strong>Ad topics</strong>, <strong>Site-suggested ads</strong> and <strong>Ad measurement</strong>. <small>Copy the address; browsers don't allow links to settings pages.</small></span></label>
+            <label class="check" for="check-chrome-adprivacy"><input type="checkbox" value="chrome-adprivacy" id="check-chrome-adprivacy" aria-labelledby="check-chrome-adprivacy-text"><span id="check-chrome-adprivacy-text">In Chrome, open <code>chrome://settings/adPrivacy</code> and switch off <strong>Ad topics</strong>, <strong>Site-suggested ads</strong> and <strong>Ad measurement</strong>. <small>Copy the address; browsers don't allow links to settings pages.</small></span></label>
             <p class="mt-1"><button type="button" class="btn btn--sm btn--ghost" data-copy="chrome://settings/adPrivacy">Copy address</button></p>
           </li>
         </ul>
 
         <h3 id="android" class="mt-2">Android</h3>
         <ul class="checklist" data-checklist="reset">
-          <li><label class="check"><input type="checkbox" value="android-id"><span><strong>Settings &rarr; Security &amp; privacy &rarr; Privacy &rarr; Ads &rarr; Delete advertising ID.</strong> <small>On older versions: Settings &rarr; Google &rarr; Ads. Deleting (not just resetting) gives apps a string of zeros.</small></span></label></li>
+          <li><label class="check" for="check-android-id"><input type="checkbox" value="android-id" id="check-android-id" aria-labelledby="check-android-id-text"><span id="check-android-id-text"><strong>Settings &rarr; Security &amp; privacy &rarr; Privacy &rarr; Ads &rarr; Delete advertising ID.</strong> <small>On older versions: Settings &rarr; Google &rarr; Ads. Deleting (not just resetting) gives apps a string of zeros.</small></span></label></li>
         </ul>
 
         <h3 id="apple" class="mt-2">iPhone, iPad &amp; Mac</h3>
         <ul class="checklist" data-checklist="reset">
-          <li><label class="check"><input type="checkbox" value="ios-att"><span><strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong> &rarr; turn off <em>Allow Apps to Request to Track</em>. <small>Apps now get a zeroed-out IDFA automatically.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="ios-apple-ads"><span><strong>Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising</strong> &rarr; turn off <em>Personalized Ads</em>.</span></label></li>
-          <li><label class="check"><input type="checkbox" value="mac-apple-ads"><span>On Mac: <strong>System Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising</strong> &rarr; turn off <em>Personalized Ads</em>.</span></label></li>
+          <li><label class="check" for="check-ios-att"><input type="checkbox" value="ios-att" id="check-ios-att" aria-labelledby="check-ios-att-text"><span id="check-ios-att-text"><strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong> &rarr; turn off <em>Allow Apps to Request to Track</em>. <small>Apps now get a zeroed-out IDFA automatically.</small></span></label></li>
+          <li><label class="check" for="check-ios-apple-ads"><input type="checkbox" value="ios-apple-ads" id="check-ios-apple-ads" aria-labelledby="check-ios-apple-ads-text"><span id="check-ios-apple-ads-text"><strong>Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising</strong> &rarr; turn off <em>Personalized Ads</em>.</span></label></li>
+          <li><label class="check" for="check-mac-apple-ads"><input type="checkbox" value="mac-apple-ads" id="check-mac-apple-ads" aria-labelledby="check-mac-apple-ads-text"><span id="check-mac-apple-ads-text">On Mac: <strong>System Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising</strong> &rarr; turn off <em>Personalized Ads</em>.</span></label></li>
         </ul>
 
         <h3 id="windows" class="mt-2">Windows</h3>
         <ul class="checklist" data-checklist="reset">
-          <li><label class="check"><input type="checkbox" value="win-id"><span><strong>Settings &rarr; Privacy &amp; security &rarr; General</strong> &rarr; turn off <em>Let apps show me personalized ads by using my advertising ID</em>.</span></label></li>
+          <li><label class="check" for="check-win-id"><input type="checkbox" value="win-id" id="check-win-id" aria-labelledby="check-win-id-text"><span id="check-win-id-text"><strong>Settings &rarr; Privacy &amp; security &rarr; General</strong> &rarr; turn off <em>Let apps show me personalized ads by using my advertising ID</em>.</span></label></li>
           <li>
-            <label class="check"><input type="checkbox" value="ms-account"><span>Turn off personalized ads on your <strong>Microsoft account</strong>. <small>Covers Bing, MSN, Outlook and Xbox.</small></span></label>
+            <label class="check" for="check-ms-account"><input type="checkbox" value="ms-account" id="check-ms-account" aria-labelledby="check-ms-account-text"><span id="check-ms-account-text">Turn off personalized ads on your <strong>Microsoft account</strong>. <small>Covers Bing, MSN, Outlook and Xbox.</small></span></label>
             <p class="mt-1"><a href="https://account.microsoft.com/privacy/ad-settings">Microsoft ad settings</a></p>
           </li>
         </ul>
@@ -151,58 +151,58 @@
         <h4>Reset: cut off the data</h4>
         <ul class="checklist" data-checklist="reset">
           <li>
-            <label class="check"><input type="checkbox" value="meta-offsite-clear"><span><strong>Your information and permissions &rarr; Your activity off Meta technologies &rarr; Clear previous activity.</strong> <small>Wipes the history of sites and apps that reported your visits and purchases to Meta.</small></span></label>
+            <label class="check" for="check-meta-offsite-clear"><input type="checkbox" value="meta-offsite-clear" id="check-meta-offsite-clear" aria-labelledby="check-meta-offsite-clear-text"><span id="check-meta-offsite-clear-text"><strong>Your information and permissions &rarr; Your activity off Meta technologies &rarr; Clear previous activity.</strong> <small>Wipes the history of sites and apps that reported your visits and purchases to Meta.</small></span></label>
             <p class="mt-1"><a href="https://accountscenter.facebook.com/info_and_permissions">Your information and permissions</a></p>
           </li>
-          <li><label class="check"><input type="checkbox" value="meta-offsite-future"><span>Same page &rarr; <strong>Manage future activity &rarr; Disconnect future activity.</strong> <small>This is the important half: clearing alone lets it refill. You'll be logged out of apps where you used "Log in with Facebook", so switch those to email logins.</small></span></label></li>
+          <li><label class="check" for="check-meta-offsite-future"><input type="checkbox" value="meta-offsite-future" id="check-meta-offsite-future" aria-labelledby="check-meta-offsite-future-text"><span id="check-meta-offsite-future-text">Same page &rarr; <strong>Manage future activity &rarr; Disconnect future activity.</strong> <small>This is the important half: clearing alone lets it refill. You'll be logged out of apps where you used "Log in with Facebook", so switch those to email logins.</small></span></label></li>
           <li>
-            <label class="check"><input type="checkbox" value="meta-partners"><span><strong>Ad preferences &rarr; Manage info &rarr; Activity information from ad partners</strong> &rarr; choose <em>No, don't make my ads more relevant by using this information</em>.</span></label>
+            <label class="check" for="check-meta-partners"><input type="checkbox" value="meta-partners" id="check-meta-partners" aria-labelledby="check-meta-partners-text"><span id="check-meta-partners-text"><strong>Ad preferences &rarr; Manage info &rarr; Activity information from ad partners</strong> &rarr; choose <em>No, don't make my ads more relevant by using this information</em>.</span></label>
             <p class="mt-1"><a href="https://accountscenter.facebook.com/ad_preferences">Meta ad preferences</a></p>
           </li>
-          <li><label class="check"><input type="checkbox" value="meta-categories"><span><strong>Ad preferences &rarr; Manage info &rarr; Categories used to reach you</strong>: turn off employer, job title, education and relationship status, and remove every entry under <em>Other categories</em>. <small>These are the inferred labels ("frequent traveler", "likely to move") that advertisers target.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-audience"><span><strong>Ad preferences &rarr; Manage info &rarr; Audience-based advertising</strong>: open each advertiser and remove yourself from their lists. <small>These businesses uploaded your email address or phone number. A long list here is a map of who sold or shared your contact details.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-offmeta"><span><strong>Ad preferences &rarr; Manage info &rarr; Ads shown outside of Meta</strong> &rarr; turn off. <small>Stops your profile following you into other apps through the Audience Network.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-social"><span><strong>Ad preferences &rarr; Manage info &rarr; Social interactions</strong> &rarr; <em>Only me</em>. <small>Stops your likes being shown to friends inside ads.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-contacts"><span><strong>Your information and permissions &rarr; Upload contacts</strong>: turn off continuous upload in each app and delete what's already uploaded. <small>Your address book feeds "People you may know" and lookalike matching.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-location"><span>In the Facebook app: <strong>Settings &amp; privacy &rarr; Settings &rarr; Location</strong> &rarr; turn off <em>Location history</em> and <em>Background location</em>. Then set the app's location permission to <em>Never</em> or <em>While using</em> in your phone's settings.</span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-eu"><span>In the EU, EEA, Switzerland or UK: <strong>Ad preferences &rarr; Ad personalization</strong> (or the consent prompt) &rarr; choose <em>less personalized ads</em>. <small>These use only what you're looking at right now, not your history. You can also object to Meta using your posts for AI training from the <a href="https://www.facebook.com/privacy/center/">Privacy Center</a>.</small></span></label></li>
+          <li><label class="check" for="check-meta-categories"><input type="checkbox" value="meta-categories" id="check-meta-categories" aria-labelledby="check-meta-categories-text"><span id="check-meta-categories-text"><strong>Ad preferences &rarr; Manage info &rarr; Categories used to reach you</strong>: turn off employer, job title, education and relationship status, and remove every entry under <em>Other categories</em>. <small>These are the inferred labels ("frequent traveler", "likely to move") that advertisers target.</small></span></label></li>
+          <li><label class="check" for="check-meta-audience"><input type="checkbox" value="meta-audience" id="check-meta-audience" aria-labelledby="check-meta-audience-text"><span id="check-meta-audience-text"><strong>Ad preferences &rarr; Manage info &rarr; Audience-based advertising</strong>: open each advertiser and remove yourself from their lists. <small>These businesses uploaded your email address or phone number. A long list here is a map of who sold or shared your contact details.</small></span></label></li>
+          <li><label class="check" for="check-meta-offmeta"><input type="checkbox" value="meta-offmeta" id="check-meta-offmeta" aria-labelledby="check-meta-offmeta-text"><span id="check-meta-offmeta-text"><strong>Ad preferences &rarr; Manage info &rarr; Ads shown outside of Meta</strong> &rarr; turn off. <small>Stops your profile following you into other apps through the Audience Network.</small></span></label></li>
+          <li><label class="check" for="check-meta-social"><input type="checkbox" value="meta-social" id="check-meta-social" aria-labelledby="check-meta-social-text"><span id="check-meta-social-text"><strong>Ad preferences &rarr; Manage info &rarr; Social interactions</strong> &rarr; <em>Only me</em>. <small>Stops your likes being shown to friends inside ads.</small></span></label></li>
+          <li><label class="check" for="check-meta-contacts"><input type="checkbox" value="meta-contacts" id="check-meta-contacts" aria-labelledby="check-meta-contacts-text"><span id="check-meta-contacts-text"><strong>Your information and permissions &rarr; Upload contacts</strong>: turn off continuous upload in each app and delete what's already uploaded. <small>Your address book feeds "People you may know" and lookalike matching.</small></span></label></li>
+          <li><label class="check" for="check-meta-location"><input type="checkbox" value="meta-location" id="check-meta-location" aria-labelledby="check-meta-location-text"><span id="check-meta-location-text">In the Facebook app: <strong>Settings &amp; privacy &rarr; Settings &rarr; Location</strong> &rarr; turn off <em>Location history</em> and <em>Background location</em>. Then set the app's location permission to <em>Never</em> or <em>While using</em> in your phone's settings.</span></label></li>
+          <li><label class="check" for="check-meta-eu"><input type="checkbox" value="meta-eu" id="check-meta-eu" aria-labelledby="check-meta-eu-text"><span id="check-meta-eu-text">In the EU, EEA, Switzerland or UK: <strong>Ad preferences &rarr; Ad personalization</strong> (or the consent prompt) &rarr; choose <em>less personalized ads</em>. <small>These use only what you're looking at right now, not your history. You can also object to Meta using your posts for AI training from the <a href="https://www.facebook.com/privacy/center/">Privacy Center</a>.</small></span></label></li>
         </ul>
         <h4 class="mt-2">Poison: scramble what's left</h4>
         <p>Meta keeps some signal no matter what you switch off, so feed it bad signal. A profile that matches the wrong person is worth less to advertisers than an accurate one.</p>
         <ul class="checklist" data-checklist="reset">
-          <li><label class="check"><input type="checkbox" value="meta-topics"><span><strong>Ad preferences &rarr; Ad topics</strong>: press <em>See less</em> on every topic that's actually you. <small>Leave the wrong guesses alone; they're free noise.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-hide"><span>On ads that match you, tap <strong>&middot;&middot;&middot; &rarr; Hide ad &rarr; It's not relevant to me</strong>. On ads that are way off, click through and scroll for a bit. <small>Engaging with the wrong ads trains the model toward the wrong person.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-decoy"><span>Pick a <strong>decoy persona</strong> (the <a href="../index.html#generator">chaff generator</a> has some) and spend a few minutes a week following, liking and searching for its interests on Facebook and Instagram. <small>Keep it consistent. Random likes are easy to filter out; a coherent fake hobby isn't.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-container"><span>Fence Meta off from the rest of your browsing: Firefox's <a href="https://addons.mozilla.org/firefox/addon/facebook-container/">Facebook Container</a>, a separate browser profile used only for Meta, or the apps only (never logged in on the web). <small>Then block the Meta Pixel everywhere else with the <a href="hosts.html">hosts builder</a> (the <em>Meta pixel</em> group).</small></span></label></li>
+          <li><label class="check" for="check-meta-topics"><input type="checkbox" value="meta-topics" id="check-meta-topics" aria-labelledby="check-meta-topics-text"><span id="check-meta-topics-text"><strong>Ad preferences &rarr; Ad topics</strong>: press <em>See less</em> on every topic that's actually you. <small>Leave the wrong guesses alone; they're free noise.</small></span></label></li>
+          <li><label class="check" for="check-meta-hide"><input type="checkbox" value="meta-hide" id="check-meta-hide" aria-labelledby="check-meta-hide-text"><span id="check-meta-hide-text">On ads that match you, tap <strong>&middot;&middot;&middot; &rarr; Hide ad &rarr; It's not relevant to me</strong>. On ads that are way off, click through and scroll for a bit. <small>Engaging with the wrong ads trains the model toward the wrong person.</small></span></label></li>
+          <li><label class="check" for="check-meta-decoy"><input type="checkbox" value="meta-decoy" id="check-meta-decoy" aria-labelledby="check-meta-decoy-text"><span id="check-meta-decoy-text">Pick a <strong>decoy persona</strong> (the <a href="../index.html#generator">chaff generator</a> has some) and spend a few minutes a week following, liking and searching for its interests on Facebook and Instagram. <small>Keep it consistent. Random likes are easy to filter out; a coherent fake hobby isn't.</small></span></label></li>
+          <li><label class="check" for="check-meta-container"><input type="checkbox" value="meta-container" id="check-meta-container" aria-labelledby="check-meta-container-text"><span id="check-meta-container-text">Fence Meta off from the rest of your browsing: Firefox's <a href="https://addons.mozilla.org/firefox/addon/facebook-container/">Facebook Container</a>, a separate browser profile used only for Meta, or the apps only (never logged in on the web). <small>Then block the Meta Pixel everywhere else with the <a href="hosts.html">hosts builder</a> (the <em>Meta pixel</em> group).</small></span></label></li>
         </ul>
         <h4 class="mt-2">Nuke: start over</h4>
         <ul class="checklist" data-checklist="reset">
-          <li><label class="check"><input type="checkbox" value="meta-download"><span>Before deleting anything, go to <strong>Your information and permissions &rarr; Download your information</strong>. <small>The ads and off-Meta activity folders in the archive show exactly who has been reporting on you.</small></span></label></li>
-          <li><label class="check"><input type="checkbox" value="meta-delete"><span>Optional: <strong>Personal details &rarr; Account ownership and control &rarr; Deactivation or deletion</strong>. <small>Deletion is final after 30 days. Advertisers' uploaded lists still exist, so do the <a href="brokers.html">data broker cleanup</a> too.</small></span></label></li>
+          <li><label class="check" for="check-meta-download"><input type="checkbox" value="meta-download" id="check-meta-download" aria-labelledby="check-meta-download-text"><span id="check-meta-download-text">Before deleting anything, go to <strong>Your information and permissions &rarr; Download your information</strong>. <small>The ads and off-Meta activity folders in the archive show exactly who has been reporting on you.</small></span></label></li>
+          <li><label class="check" for="check-meta-delete"><input type="checkbox" value="meta-delete" id="check-meta-delete" aria-labelledby="check-meta-delete-text"><span id="check-meta-delete-text">Optional: <strong>Personal details &rarr; Account ownership and control &rarr; Deactivation or deletion</strong>. <small>Deletion is final after 30 days. Advertisers' uploaded lists still exist, so do the <a href="brokers.html">data broker cleanup</a> too.</small></span></label></li>
         </ul>
 
         <h3 id="platforms" class="mt-2">Platforms &amp; the ad industry</h3>
         <ul class="checklist" data-checklist="reset">
           <li>
-            <label class="check"><input type="checkbox" value="amazon"><span><strong>Amazon</strong>: choose <em>Do not show me interest-based ads provided by Amazon</em>.</span></label>
+            <label class="check" for="check-amazon"><input type="checkbox" value="amazon" id="check-amazon" aria-labelledby="check-amazon-text"><span id="check-amazon-text"><strong>Amazon</strong>: choose <em>Do not show me interest-based ads provided by Amazon</em>.</span></label>
             <p class="mt-1"><a href="https://www.amazon.com/adprefs">Amazon advertising preferences</a></p>
           </li>
-          <li><label class="check"><input type="checkbox" value="x"><span><strong>X (Twitter)</strong>: Settings &rarr; Privacy and safety &rarr; <em>Ads preferences</em> &rarr; turn off personalized ads.</span></label></li>
+          <li><label class="check" for="check-x"><input type="checkbox" value="x" id="check-x" aria-labelledby="check-x-text"><span id="check-x-text"><strong>X (Twitter)</strong>: Settings &rarr; Privacy and safety &rarr; <em>Ads preferences</em> &rarr; turn off personalized ads.</span></label></li>
           <li>
-            <label class="check"><input type="checkbox" value="daa"><span>Run the <strong>industry opt-outs</strong> in each browser you use. <small>They work with cookies, so redo them after clearing cookies.</small></span></label>
+            <label class="check" for="check-daa"><input type="checkbox" value="daa" id="check-daa" aria-labelledby="check-daa-text"><span id="check-daa-text">Run the <strong>industry opt-outs</strong> in each browser you use. <small>They work with cookies, so redo them after clearing cookies.</small></span></label>
             <p class="mt-1"><a href="https://optout.aboutads.info/">DAA WebChoices (US)</a> &middot; <a href="https://optout.networkadvertising.org/">NAI opt-out</a> &middot; <a href="https://www.youronlinechoices.eu/">Your Online Choices (EU)</a></p>
           </li>
           <li>
-            <label class="check"><input type="checkbox" value="gpc"><span>Turn on <strong>Global Privacy Control</strong>: a legally recognized "do not sell" signal in several US states. <small>Built into Firefox (Settings &rarr; Privacy), Brave and DuckDuckGo; available as an extension elsewhere.</small></span></label>
+            <label class="check" for="check-gpc"><input type="checkbox" value="gpc" id="check-gpc" aria-labelledby="check-gpc-text"><span id="check-gpc-text">Turn on <strong>Global Privacy Control</strong>: a legally recognized "do not sell" signal in several US states. <small>Built into Firefox (Settings &rarr; Privacy), Brave and DuckDuckGo; available as an extension elsewhere.</small></span></label>
             <p class="mt-1"><a href="https://globalprivacycontrol.org/">About GPC</a></p>
           </li>
-          <li><label class="check"><input type="checkbox" value="tv"><span>On your <strong>smart TV</strong>, turn off <em>ACR</em> / <em>Viewing information</em> / <em>Live Plus</em> and interest-based ads. <small>The menu name differs by brand: look under Privacy or Terms &amp; Policies.</small></span></label></li>
+          <li><label class="check" for="check-tv"><input type="checkbox" value="tv" id="check-tv" aria-labelledby="check-tv-text"><span id="check-tv-text">On your <strong>smart TV</strong>, turn off <em>ACR</em> / <em>Viewing information</em> / <em>Live Plus</em> and interest-based ads. <small>The menu name differs by brand: look under Privacy or Terms &amp; Policies.</small></span></label></li>
         </ul>
 
         <h3 class="mt-2">Verify</h3>
         <ul class="checklist" data-checklist="reset">
           <li>
-            <label class="check"><input type="checkbox" value="fingerprint"><span>Check how trackable your browser still is. <small>Fingerprinting works without cookies or IDs.</small></span></label>
+            <label class="check" for="check-fingerprint"><input type="checkbox" value="fingerprint" id="check-fingerprint" aria-labelledby="check-fingerprint-text"><span id="check-fingerprint-text">Check how trackable your browser still is. <small>Fingerprinting works without cookies or IDs.</small></span></label>
             <p class="mt-1"><a href="https://coveryourtracks.eff.org/">EFF Cover Your Tracks</a> &middot; <a href="https://amiunique.org/">AmIUnique</a></p>
           </li>
         </ul>

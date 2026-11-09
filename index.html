@@ -17,7 +17,7 @@
   <meta property="og:title" content="Ad Poison: Scramble Your Ad Profile">
   <meta property="og:description" content="Feed the trackers garbage. Generate decoy browsing, block ad domains, and reset your advertising IDs. No sign-up, no tracking.">
   <meta property="og:url" content="https://codeposse.github.io/AdPoison/">
-  <meta property="article:modified_time" content="2026-10-22">
+  <meta property="article:modified_time" content="2026-11-08">
   <meta property="og:image" content="https://codeposse.github.io/AdPoison/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -93,7 +93,7 @@
           {
             "@type": "Question",
             "name": "Why not a browser extension like Chaff?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Extensions that generate background traffic have been removed from or disabled in the Chrome Web Store. A web page works in any browser without installing anything, and you can see exactly what it does." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Extensions that generate background traffic have been removed from or disabled in the Chrome Web Store. A web page works in any browser without installing anything, and you can see exactly what it does. For noise that keeps running after you close the tab or that comes from your phone, independent tools such as AdNauseam and Fauxx are listed on the site." }
           },
           {
             "@type": "Question",
@@ -108,6 +108,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#generator">Skip to chaff generator</a>
 
   <header class="site-header">
     <div class="wrap">
@@ -127,7 +128,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <!-- ============ HERO ============ -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__sky" aria-hidden="true"></div>
@@ -148,7 +149,7 @@
           <span class="eyebrow">Free &middot; No sign-up &middot; No tracking</span>
           <h1 id="hero-title">Feed the trackers garbage.</h1>
           <p class="lede">Ad networks build a profile of you from every click. Ad Poison scrambles it with decoy browsing, blocks the worst offenders, and walks you through wiping the slate clean.</p>
-          <p class="updated">Updated <time datetime="2026-10-22">October 22, 2026</time></p>
+          <p class="updated">Updated <time datetime="2026-11-08">November 8, 2026</time></p>
           <div class="btn-row">
             <a class="btn" href="#generator">Start poisoning</a>
             <a class="btn btn--teal no-ext" href="https://myadcenter.google.com/personalizationoff?n=true">Turn off Google ad personalization</a>
@@ -211,7 +212,7 @@
     </section>
 
     <!-- ============ GENERATOR ============ -->
-    <section class="section section--alt" id="generator" aria-labelledby="gen-title">
+    <section class="section section--alt" id="generator" tabindex="-1" aria-labelledby="gen-title">
       <div class="wrap">
         <div class="section__head">
           <span class="eyebrow">Step 01 &middot; Noise</span>
@@ -224,8 +225,8 @@
             <form id="chaff-form">
               <fieldset>
                 <legend>1. Pick a mode</legend>
-                <label class="check"><input type="radio" name="mode" value="persona" checked><span>Persona <small>Act consistently like someone you're not. Harder for ad systems to filter out.</small></span></label>
-                <label class="check"><input type="radio" name="mode" value="chaos"><span>Chaos <small>A different random interest every hop.</small></span></label>
+                <label class="check" for="mode-persona"><input type="radio" name="mode" value="persona" checked id="mode-persona" aria-labelledby="mode-persona-text"><span id="mode-persona-text">Persona <small>Act consistently like someone you're not. Harder for ad systems to filter out.</small></span></label>
+                <label class="check" for="mode-chaos"><input type="radio" name="mode" value="chaos" id="mode-chaos" aria-labelledby="mode-chaos-text"><span id="mode-chaos-text">Chaos <small>A different random interest every hop.</small></span></label>
               </fieldset>
 
               <div class="field mt-1">
@@ -242,14 +243,14 @@
                 <legend>2. Where to send noise</legend>
                 <p class="field__hint" style="margin-bottom:.6rem"><strong>Full visit</strong> sites load in the chaff window like normal browsing. Google and YouTube block remote-controlled windows, so they get a <strong>background ping</strong>: a hidden request that carries the cookies your browser allows for third-party requests.</p>
                 <div class="console__checks">
-                  <label class="check"><input type="checkbox" name="dest" value="google" checked><span>Google Search <small>Background ping</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="youtube" checked><span>YouTube <small>Background ping</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="bing" checked><span>Bing <small>Full visit</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="amazon" checked><span>Amazon <small>Full visit</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="etsy"><span>Etsy <small>Full visit</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="news"><span>Google News <small>Background ping</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="wikipedia"><span>Wikipedia <small>Random article, full visit</small></span></label>
-                  <label class="check"><input type="checkbox" name="dest" value="duck"><span>DuckDuckGo <small>Doesn't profile you, adds cover only</small></span></label>
+                  <label class="check" for="dest-google"><input type="checkbox" name="dest" value="google" checked id="dest-google" aria-labelledby="dest-google-text"><span id="dest-google-text">Google Search <small>Background ping</small></span></label>
+                  <label class="check" for="dest-youtube"><input type="checkbox" name="dest" value="youtube" checked id="dest-youtube" aria-labelledby="dest-youtube-text"><span id="dest-youtube-text">YouTube <small>Background ping</small></span></label>
+                  <label class="check" for="dest-bing"><input type="checkbox" name="dest" value="bing" checked id="dest-bing" aria-labelledby="dest-bing-text"><span id="dest-bing-text">Bing <small>Full visit</small></span></label>
+                  <label class="check" for="dest-amazon"><input type="checkbox" name="dest" value="amazon" checked id="dest-amazon" aria-labelledby="dest-amazon-text"><span id="dest-amazon-text">Amazon <small>Full visit</small></span></label>
+                  <label class="check" for="dest-etsy"><input type="checkbox" name="dest" value="etsy" id="dest-etsy" aria-labelledby="dest-etsy-text"><span id="dest-etsy-text">Etsy <small>Full visit</small></span></label>
+                  <label class="check" for="dest-news"><input type="checkbox" name="dest" value="news" id="dest-news" aria-labelledby="dest-news-text"><span id="dest-news-text">Google News <small>Background ping</small></span></label>
+                  <label class="check" for="dest-wikipedia"><input type="checkbox" name="dest" value="wikipedia" id="dest-wikipedia" aria-labelledby="dest-wikipedia-text"><span id="dest-wikipedia-text">Wikipedia <small>Random article, full visit</small></span></label>
+                  <label class="check" for="dest-duck"><input type="checkbox" name="dest" value="duck" id="dest-duck" aria-labelledby="dest-duck-text"><span id="dest-duck-text">DuckDuckGo <small>Doesn't profile you, adds cover only</small></span></label>
                 </div>
               </fieldset>
 
@@ -304,6 +305,59 @@
       </div>
     </section>
 
+    <!-- ============ MORE NOISE ============ -->
+    <section class="section" id="more-noise" aria-labelledby="more-noise-title">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">Step 01 &middot; More noise</span>
+          <h2 id="more-noise-title">Noise beyond this tab</h2>
+          <p>The generator stops when you close the tab, and it can't reach your phone. These independent open-source projects can. Add one at a time, check what access it asks for, and keep in mind that automated browsing can break a site's terms of service.</p>
+        </div>
+        <div class="grid">
+          <article class="card pixel-box">
+            <h3>AdNauseam</h3>
+            <p><span class="pill pill--noise">Browser extension</span></p>
+            <p>Blocks ads, then quietly clicks them in the background, so your profile fills up with ads you never cared about.</p>
+            <p><strong>This is the one thing Ad Poison won't do.</strong> Advertisers can end up paying for those clicks. The developers say it isn't click fraud, but the decision is yours, and you can reduce or turn off clicking in its settings.</p>
+            <p>Use it in place of your other ad blocker, which would hide ads before AdNauseam sees them. Google doesn't allow it in the Chrome Web Store, so Chromium browsers need a manual install.</p>
+            <div class="btn-row" style="margin-top:auto">
+              <a class="btn btn--sm btn--pink" href="https://addons.mozilla.org/en-US/firefox/addon/adnauseam/">Firefox add-on</a>
+              <a class="btn btn--sm btn--ghost" href="https://adnauseam.io/">adnauseam.io</a>
+            </div>
+          </article>
+          <article class="card pixel-box">
+            <h3>Fauxx</h3>
+            <p><span class="pill pill--noise">Android app</span></p>
+            <p>Generates believable decoy browsing from your phone, which a tab on your computer can't do. Get it from F-Droid or GitHub; it isn't on Google Play.</p>
+            <p>If you use a tracker blocker such as DuckDuckGo App Tracking Protection, exclude Fauxx from it, or much of the noise gets blocked.</p>
+            <p>Its own docs say the location spoofing module doesn't do what the name suggests, and that it can't change your device fingerprint or undo matches on your email or phone number.</p>
+            <a class="btn btn--sm btn--pink" href="https://github.com/digital-grease/fauxx">Fauxx on GitHub</a>
+          </article>
+          <article class="card pixel-box">
+            <h3>Fauxx Desktop</h3>
+            <p><span class="pill pill--noise">Windows, macOS, Linux</span></p>
+            <p>The computer companion to Fauxx. It runs decoy personas in an isolated Chromium profile, can pair with the phone app over your home network so the decoys match, and includes tools to check whether the noise is working.</p>
+            <p>It's still early, so expect changes. Downloads are unsigned, so Windows and macOS warn on first launch. Verify the published checksum first.</p>
+            <a class="btn btn--sm btn--ghost" href="https://github.com/digital-grease/fauxx-desktop">Fauxx Desktop on GitHub</a>
+          </article>
+          <article class="card pixel-box">
+            <h3>TrackMeNot</h3>
+            <p><span class="pill pill--noise">Browser extension</span></p>
+            <p>The academic project that popularized decoy searches. It sends randomized queries to search engines in the background, but it reportedly hasn't been updated since 2019.</p>
+            <p><a href="https://addons.mozilla.org/firefox/addon/trackmenot-fork/">TrackMeNot-Fork</a> keeps the idea going on Firefox. It's small, and its author says it was rebuilt with AI help, so read <a href="https://github.com/paradonym/TrackMeNot">the source</a> before giving it access to every site.</p>
+            <a class="btn btn--sm btn--ghost" href="https://trackmenot.io/">trackmenot.io</a>
+          </article>
+          <article class="card pixel-box">
+            <h3>ISP Data Pollution</h3>
+            <p><span class="pill pill--self">Python script</span></p>
+            <p>Crawls random sites from your machine to bury your history at the network level. It's aimed at what your internet provider sees rather than ad cookies.</p>
+            <p>For tinkerers: it needs Python, Selenium and ChromeDriver, it's built to use a lot of bandwidth, and some install notes are dated. The author warns that this kind of noise can be filtered statistically and can't hide specific sensitive visits.</p>
+            <a class="btn btn--sm btn--ghost" href="https://github.com/essandess/isp-data-pollution">ISP Data Pollution on GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ QUICK HITS ============ -->
     <section class="section" aria-labelledby="quick-title">
       <div class="wrap grid grid--2">
@@ -352,7 +406,7 @@
           <details class="acc">
             <summary>Why not a browser extension like Chaff?</summary>
             <div class="acc__body">
-              <p>The original <a href="https://github.com/immutabledev/chaff">Chaff extension</a> no longer works in Chrome, and traffic-generating extensions keep getting pulled from stores. A plain web page works in any browser, needs no install, and you can read every line of its source.</p>
+              <p>The original <a href="https://github.com/immutabledev/chaff">Chaff extension</a> no longer works in Chrome, and traffic-generating extensions keep getting pulled from stores. A plain web page works in any browser, needs no install, and you can read every line of its source. If you want noise that keeps running after you close this tab or that comes from your phone, see <a href="#more-noise">more noise tools</a>.</p>
             </div>
           </details>
           <details class="acc">

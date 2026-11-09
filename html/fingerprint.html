@@ -81,6 +81,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#fp">Skip to fingerprint check</a>
 
   <header class="site-header">
     <div class="wrap">
@@ -100,7 +101,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
         <div>
@@ -128,7 +129,7 @@
           <p class="callout">The check needs JavaScript. So do most fingerprinting scripts: blocking JavaScript (for example with NoScript, or Tor Browser's <em>Safest</em> level) is one of the strongest defences, at the cost of broken sites.</p>
         </noscript>
 
-        <div class="screen screen--auto" id="fp">
+        <div class="screen screen--auto" id="fp" tabindex="-1">
           <p class="status-line" id="fp-status" role="status" aria-live="polite">Waiting to scan&hellip;</p>
           <div class="fp-id">
             <canvas id="fp-avatar" width="9" height="9" role="img" aria-label="Pixel sugar skull generated from your fingerprint ID"></canvas>
@@ -145,7 +146,7 @@
           </div>
         </div>
 
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="What each signal did">
           <table>
             <caption>What each signal did</caption>
             <thead>

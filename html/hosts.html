@@ -64,6 +64,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#hosts-builder">Skip to hosts builder</a>
 
   <header class="site-header">
     <div class="wrap">
@@ -83,7 +84,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="wrap">
         <div>
@@ -107,7 +108,7 @@
           <p>Tick the groups you want. Entries tagged <span class="pill pill--paid">may break</span> can stop something visible from working; the note says what.</p>
         </div>
 
-        <div class="console" id="hosts-builder">
+        <div class="console" id="hosts-builder" tabindex="-1">
           <div class="pixel-box console__controls">
             <fieldset>
               <legend>Tracker groups</legend>
@@ -124,7 +125,7 @@
                 <option value="127.0.0.1">127.0.0.1 (classic loopback)</option>
               </select>
             </div>
-            <label class="check"><input type="checkbox" id="hosts-ipv6"><span>Also add IPv6 lines (<code>::</code>) <small>Useful on networks with IPv6 enabled.</small></span></label>
+            <label class="check" for="hosts-ipv6"><input type="checkbox" id="hosts-ipv6" aria-labelledby="hosts-ipv6-text"><span id="hosts-ipv6-text">Also add IPv6 lines (<code>::</code>) <small>Useful on networks with IPv6 enabled.</small></span></label>
             <div class="field">
               <label for="hosts-custom">Extra domains (optional)</label>
               <textarea id="hosts-custom" rows="3" placeholder="tracker.example.com, ads.example.net" aria-describedby="custom-hint"></textarea>
@@ -159,7 +160,7 @@
           <summary>Windows 10 / 11</summary>
           <div class="acc__body">
             <p>Right-click Start, choose <strong>Terminal (Admin)</strong> or <strong>Windows PowerShell (Admin)</strong>, then paste:</p>
-            <div class="code"><span class="code__label">PowerShell (Admin)</span><pre id="cmd-win"><code>Copy-Item "$env:windir\System32\drivers\etc\hosts" "$env:windir\System32\drivers\etc\hosts.bak"
+            <div class="code"><span class="code__label">PowerShell (Admin)</span><pre tabindex="0" id="cmd-win"><code>Copy-Item "$env:windir\System32\drivers\etc\hosts" "$env:windir\System32\drivers\etc\hosts.bak"
 Add-Content -Path "$env:windir\System32\drivers\etc\hosts" -Value (Get-Clipboard -Raw)
 ipconfig /flushdns</code></pre><button type="button" class="btn btn--sm copy-btn" data-copy-target="#cmd-win">Copy</button></div>
             <p>Prefer clicking? Open <strong>Notepad as administrator</strong>, use File &rarr; Open, paste <code>C:\Windows\System32\drivers\etc\hosts</code> into the file name box (set the filter to <em>All files</em>), paste your block at the end and save.</p>
@@ -171,7 +172,7 @@ ipconfig /flushdns</code></pre><button type="button" class="btn btn--sm copy-btn
           <summary>macOS</summary>
           <div class="acc__body">
             <p>Open <strong>Terminal</strong> and paste (you'll be asked for your password):</p>
-            <div class="code"><span class="code__label">Terminal</span><pre id="cmd-mac"><code>sudo cp /etc/hosts /etc/hosts.bak
+            <div class="code"><span class="code__label">Terminal</span><pre tabindex="0" id="cmd-mac"><code>sudo cp /etc/hosts /etc/hosts.bak
 pbpaste | sudo tee -a /etc/hosts &gt; /dev/null
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code></pre><button type="button" class="btn btn--sm copy-btn" data-copy-target="#cmd-mac">Copy</button></div>
           </div>
@@ -181,7 +182,7 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code></pre><butto
           <summary>Linux</summary>
           <div class="acc__body">
             <p>Use <code>wl-paste</code> on Wayland or <code>xclip -o -selection clipboard</code> on X11:</p>
-            <div class="code"><span class="code__label">Shell</span><pre id="cmd-linux"><code>sudo cp /etc/hosts /etc/hosts.bak
+            <div class="code"><span class="code__label">Shell</span><pre tabindex="0" id="cmd-linux"><code>sudo cp /etc/hosts /etc/hosts.bak
 wl-paste | sudo tee -a /etc/hosts &gt; /dev/null
 # systemd-resolved (Ubuntu, Fedora, Arch...)
 resolvectl flush-caches</code></pre><button type="button" class="btn btn--sm copy-btn" data-copy-target="#cmd-linux">Copy</button></div>
